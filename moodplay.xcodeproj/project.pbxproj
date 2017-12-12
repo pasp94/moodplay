@@ -12,6 +12,7 @@
 		1B7EF8E41FDEF64F006A12D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E21FDEF64F006A12D4 /* Main.storyboard */; };
 		1B7EF8E61FDEF64F006A12D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E51FDEF64F006A12D4 /* Assets.xcassets */; };
 		1B7EF8E91FDEF64F006A12D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E71FDEF64F006A12D4 /* LaunchScreen.storyboard */; };
+		1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		1B7EF8E51FDEF64F006A12D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B7EF8E81FDEF64F006A12D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B7EF8EA1FDEF650006A12D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = moodplay.entitlements; sourceTree = "<group>"; };
+		1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				1B7EF8DD1FDEF64F006A12D4 /* moodplay */,
 				1B7EF8DC1FDEF64F006A12D4 /* Products */,
+				1B7EF8F51FDF350A006A12D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		1B7EF8DD1FDEF64F006A12D4 /* moodplay */ = {
 			isa = PBXGroup;
 			children = (
+				1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */,
 				1B7EF8DE1FDEF64F006A12D4 /* AppDelegate.swift */,
 				1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */,
 				1B7EF8E21FDEF64F006A12D4 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				1B7EF8EA1FDEF650006A12D4 /* Info.plist */,
 			);
 			path = moodplay;
+			sourceTree = "<group>";
+		};
+		1B7EF8F51FDF350A006A12D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,14 @@
 					1B7EF8DA1FDEF64F006A12D4 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -274,11 +296,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = moodplay/moodplay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZVMLP4E42;
 				INFOPLIST_FILE = moodplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosda2017.CloudKitProject.moodplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosda2017.CloudKitProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -289,11 +312,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = moodplay/moodplay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZVMLP4E42;
 				INFOPLIST_FILE = moodplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosda2017.CloudKitProject.moodplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosda2017.CloudKitProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
