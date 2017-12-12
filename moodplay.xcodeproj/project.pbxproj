@@ -15,6 +15,7 @@
 		1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */; };
 		1B7EF8F91FDFF3DC006A12D4 /* Recognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8F81FDFF3DC006A12D4 /* Recognizer.storyboard */; };
 		1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */; };
+		1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1B7EF8F81FDFF3DC006A12D4 /* Recognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recognizer.storyboard; sourceTree = "<group>"; };
 		1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodlist.storyboard; sourceTree = "<group>"; };
+		1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		1B7EF8DD1FDEF64F006A12D4 /* moodplay */ = {
 			isa = PBXGroup;
 			children = (
+				1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */,
 				1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */,
 				1B7EF8F81FDFF3DC006A12D4 /* Recognizer.storyboard */,
 				1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */,
@@ -153,6 +156,7 @@
 			files = (
 				1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */,
 				1B7EF8F91FDFF3DC006A12D4 /* Recognizer.storyboard in Resources */,
+				1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */,
 				1B7EF8E91FDEF64F006A12D4 /* LaunchScreen.storyboard in Resources */,
 				1B7EF8E61FDEF64F006A12D4 /* Assets.xcassets in Resources */,
 				1B7EF8E41FDEF64F006A12D4 /* Main.storyboard in Resources */,
