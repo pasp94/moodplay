@@ -65,15 +65,11 @@
 		1B7EF8DD1FDEF64F006A12D4 /* moodplay */ = {
 			isa = PBXGroup;
 			children = (
-				1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */,
-				1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */,
-				1B7EF8F81FDFF3DC006A12D4 /* Recognizer.storyboard */,
 				1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */,
 				1B7EF8DE1FDEF64F006A12D4 /* AppDelegate.swift */,
-				1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */,
-				1B7EF8E21FDEF64F006A12D4 /* Main.storyboard */,
+				423B58A81FE047C300D14E0F /* controllers */,
+				423B58A71FE047B100D14E0F /* view */,
 				1B7EF8E51FDEF64F006A12D4 /* Assets.xcassets */,
-				1B7EF8E71FDEF64F006A12D4 /* LaunchScreen.storyboard */,
 				1B7EF8EA1FDEF650006A12D4 /* Info.plist */,
 			);
 			path = moodplay;
@@ -85,6 +81,26 @@
 				1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		423B58A71FE047B100D14E0F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */,
+				1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */,
+				1B7EF8F81FDFF3DC006A12D4 /* Recognizer.storyboard */,
+				1B7EF8E71FDEF64F006A12D4 /* LaunchScreen.storyboard */,
+				1B7EF8E21FDEF64F006A12D4 /* Main.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		423B58A81FE047C300D14E0F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
