@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VdF-c0-YUX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VdF-c0-YUX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="UNK-Ox-rOL" kind="relationship" relationship="viewControllers" id="Fiv-Wc-Gg3"/>
                         <segue destination="uJo-Vg-DpP" kind="relationship" relationship="viewControllers" id="F80-8B-JkC"/>
                         <segue destination="7vt-e2-6Tb" kind="relationship" relationship="viewControllers" id="Unv-4I-SWe"/>
                     </connections>
@@ -28,16 +27,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iq7-7P-6Eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-519" y="107"/>
-        </scene>
-        <!--Recognizer-->
-        <scene sceneID="oAd-OK-ODD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Recognizer" id="UNK-Ox-rOL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="d8Z-JH-Ysh"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SvK-tM-Why" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="472.80000000000001" y="-639.13043478260875"/>
         </scene>
         <!--Moodlist-->
         <scene sceneID="aH0-GZ-EZe">
@@ -47,7 +36,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tY1-hg-Z2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.80000000000001" y="107.49625187406298"/>
+            <point key="canvasLocation" x="706" y="106"/>
         </scene>
         <!--MyProfile-->
         <scene sceneID="hVa-sD-2Me">
