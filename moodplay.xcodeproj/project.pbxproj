@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */; };
+		1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */; };
+		1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */; };
 		1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF8DE1FDEF64F006A12D4 /* AppDelegate.swift */; };
 		1B7EF8E11FDEF64F006A12D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */; };
 		1B7EF8E41FDEF64F006A12D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E21FDEF64F006A12D4 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlistTableViewController.swift; sourceTree = "<group>"; };
+		1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShuffleViewCell.swift; sourceTree = "<group>"; };
+		1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		1B7EF8DB1FDEF64F006A12D4 /* moodplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7EF8DE1FDEF64F006A12D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B7107EE1FE40C5D00620D82 /* customObjects */ = {
+			isa = PBXGroup;
+			children = (
+				1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */,
+				1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */,
+			);
+			path = customObjects;
+			sourceTree = "<group>";
+		};
 		1B7EF8D21FDEF64F006A12D4 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,8 @@
 		423B58A81FE047C300D14E0F /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B7107EE1FE40C5D00620D82 /* customObjects */,
+				1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */,
 				1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */,
 				E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */,
 				E7DCAAB01FE32FF3003967F2 /* MoodlistCollectionViewCell.swift */,
@@ -236,16 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */,
 				E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */,
 				1B7EF8E11FDEF64F006A12D4 /* ViewController.swift in Sources */,
 				E7DCAAB11FE32FF3003967F2 /* MoodlistCollectionViewCell.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */,
+				1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */,
 				E70096AA1FE329D8009FA0F2 /* MoodlistCollectionViewController.swift in Sources */,
 				E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */,
 				4295A79E1FE4027D00ED832E /* DAO.swift in Sources */,
 				4295A79A1FE4027D00ED832E /* ProtocolDAO.swift in Sources */,
 				E70096A41FE3282F009FA0F2 /* Song.swift in Sources */,
+				1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */,
 				E70096A81FE328E6009FA0F2 /* User.swift in Sources */,
 				4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */,
 			);
