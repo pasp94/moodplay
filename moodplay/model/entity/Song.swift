@@ -1,42 +1,86 @@
 //
 //  Song.swift
-//  moodplay
+//  prova
 //
-//  Created by Andrea Mignano on 14/12/17.
-//  Copyright © 2017 Pasquale Spisto. All rights reserved.
+//  Created by Pasquale on 12/12/17.
+//  Copyright © 2017 Pasquale. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Song {
+/*extension UIColor {
+ 
+ // MARK: - Initialization
+ 
+ convenience init?(hex: String) {
+ 
+ var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+ hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+ 
+ var rgb: UInt32 = 0
+ 
+ var r: CGFloat = 0.0
+ var g: CGFloat = 0.0
+ var b: CGFloat = 0.0
+ var a: CGFloat = 1.0
+ 
+ let length = hexSanitized.count
+ 
+ 
+ guard Scanner(string: hexSanitized).scanHexInt32(&rgb) else { return nil }
+ 
+ if length == 6 {
+ r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+ g = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+ b = CGFloat(rgb & 0x0000FF) / 255.0
+ 
+ } else if length == 8 {
+ r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
+ g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
+ b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
+ a = CGFloat(rgb & 0x000000FF) / 255.0
+ 
+ } else {
+ return nil
+ }
+ 
+ print("r = ",r,"g = ",g,"b = ", b,"a = ", a)
+ 
+ self.init(red: r, green: g, blue: b, alpha: a)
+ }
+ 
+ }*/
+
+class Song
+{
     
-    //Song Attributes
-    let title : String
-    let author : String
-    var mood : String
-    var genres : [String]
-    let duration_ms : Int
-    let artwork : String                //Use it casting in UIImage
     
-    //External Song Attributes
-    var youtubetLink : String
-    var spotifyPreviewURLLink : String
+    var author: String
+    var title: String
+    var album: String
+    var mood: String
+    var duration_ms: Int
+    var youtubeLink: String
+    var spotifyLink: String
+    var spotifyPreviewURL: String
+    var genres: [String]
     
-    //Inits
-    init (title: String, author: String, mood: String, genres: [String], duration_ms: Int, artwork: String, ytlink: String, spPrewLink: String) {
-        self.title = title
+    
+    
+    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String){
         self.author = author
+        self.title = title
+        self.album = album
         self.mood = mood
-        self.genres = genres
+        self.youtubeLink = youtubeLink
+        self.spotifyLink = spotifyLink
         self.duration_ms = duration_ms
-        self.artwork = artwork
-        self.youtubetLink = ytlink
-        self.spotifyPreviewURLLink = spPrewLink
+        self.genres = genres
+        self.spotifyPreviewURL = spotifyPreviewURL
     }
     
     
-    //Methods
-    
     
 }
+
