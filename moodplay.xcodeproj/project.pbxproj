@@ -66,7 +66,6 @@
 		1B7EF8D21FDEF64F006A12D4 = {
 			isa = PBXGroup;
 			children = (
-				4295A78E1FE4027C00ED832E /* model */,
 				1B7EF8DD1FDEF64F006A12D4 /* moodplay */,
 				1B7EF8DC1FDEF64F006A12D4 /* Products */,
 				1B7EF8F51FDF350A006A12D4 /* Frameworks */,
@@ -86,8 +85,9 @@
 			children = (
 				1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */,
 				1B7EF8DE1FDEF64F006A12D4 /* AppDelegate.swift */,
-				423B58A81FE047C300D14E0F /* controllers */,
 				423B58A71FE047B100D14E0F /* view */,
+				4295A78E1FE4027C00ED832E /* model */,
+				423B58A81FE047C300D14E0F /* controllers */,
 				1B7EF8E51FDEF64F006A12D4 /* Assets.xcassets */,
 				1B7EF8EA1FDEF650006A12D4 /* Info.plist */,
 			);
