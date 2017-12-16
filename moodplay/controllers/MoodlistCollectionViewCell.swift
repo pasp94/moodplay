@@ -10,4 +10,14 @@ import UIKit
 
 class MoodlistCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var moodlist : Moodlist? {
+        didSet{
+            if let moodlist = moodlist {
+                titleLabel.text = moodlist.title
+            }
+        }
+        
+    }
 }
