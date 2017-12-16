@@ -13,7 +13,6 @@ import UIKit
 class Song
 {
     
-    
     var author: String
     var title: String
     var album: String
@@ -23,10 +22,11 @@ class Song
     var spotifyLink: String
     var spotifyPreviewURL: String
     var genres: [String]
+    var artwork: String
     
     
     
-    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String){
+    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String, artwork: String){
         self.author = author
         self.title = title
         self.album = album
@@ -36,6 +36,7 @@ class Song
         self.duration_ms = duration_ms
         self.genres = genres
         self.spotifyPreviewURL = spotifyPreviewURL
+        self.artwork = artwork
     }
     
     

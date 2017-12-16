@@ -1,6 +1,6 @@
 //
 //  SongDAO.swift
-//  prova
+//  moodplay
 //
 //  Created by Pasquale on 12/12/17.
 //  Copyright © 2017 Pasquale. All rights reserved.
@@ -24,7 +24,7 @@ class SongDAO: DAO, ProtocolDAO
         
         let song = object as! Song
         
-        let songRecord = CKRecord(recordType: "Song", recordID: CKRecordID(recordName: song.spotifyLink))
+        let songRecord = CKRecord(recordType: "MoodPlaySong", recordID: CKRecordID(recordName: song.spotifyLink))
         songRecord.setValue(song.author, forKey: "author")
         songRecord.setValue(song.title, forKey: "title")
         songRecord.setValue(song.album, forKey: "album")
@@ -34,15 +34,15 @@ class SongDAO: DAO, ProtocolDAO
         songRecord.setValue(song.spotifyLink, forKey: "spotifyLink")
         songRecord.setValue(song.genres, forKey: "genres")
         songRecord.setValue(song.spotifyPreviewURL, forKey: "spotifyPreviewURL")
+        songRecord.setValue(song.artwork, forKey: "artwork")
         
         self.database.save(songRecord){
             
             (record, error) in
             
             if error != nil{
-                print(error as! String)
+                print(error!)
             }
-            
             
             guard record != nil else {return}
             
@@ -51,9 +51,8 @@ class SongDAO: DAO, ProtocolDAO
     }
     
     func readObjectFromCloud(id: String) -> AnyObject {
+        
         var data: Song?
-        
-        
         
         readObjectFromCloudDispatchQueue.sync {
             
@@ -76,9 +75,10 @@ class SongDAO: DAO, ProtocolDAO
                 let spotifyLink = record!["spotifyLink"] as! String
                 let genres = record!["genres"] as! [String]
                 let spotifyPreviewURL = record!["spotifyPreviewURL"] as! String
+                let artwork = record!["artwork"] as! String
                 
                 
-                data = Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL)
+                data = Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artwork: artwork)
                 
                 //MySingleton.shared.finished = true
                 self.dispatchGroup.leave()
@@ -95,7 +95,7 @@ class SongDAO: DAO, ProtocolDAO
     
     func fetchObjects(field: String, equalTo: String) -> [AnyObject ]  {
         //let query = CKQuery(recordType: "Song", predicate: NSPredicate(value: true))
-        let query = CKQuery(recordType: "Song", predicate: NSPredicate(format: "\(field) = %@ ", equalTo))
+        let query = CKQuery(recordType: "MoodPlaySong", predicate: NSPredicate(format: "\(field) = %@ ", equalTo))
         
         var songs = [Song]()
         
@@ -120,8 +120,9 @@ class SongDAO: DAO, ProtocolDAO
                     let duration_ms = r.object(forKey: "duration_ms")! as! Int
                     let genres = r.object(forKey: "genres")! as! [String]
                     let spotifyPreviewURL = r.object(forKey: "spotifyPreviewURL")! as! String
+                    let artwork = r.object(forKey: "artwork")! as! String
                     
-                    songs.append(Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL))
+                    songs.append(Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artwork: artwork))
                     
                 }
                 
@@ -137,6 +138,31 @@ class SongDAO: DAO, ProtocolDAO
         return songs
     }
     
-
+    func deleteRecord(id: String) {
+        
+        database.delete(withRecordID: CKRecordID(recordName: id), completionHandler: {
+            
+            record,error in
+            
+            
+            if record == nil{
+                print(error!)
+                return
+            }
+            print("record deleted successfully")
+            
+            
+        })
+    }
+    
+    func updateRecord(id: String, object: AnyObject) {
+        deleteRecord(id: id)
+        writeObjectToCloud(object: object)
+    }
+    
+    
+    
+    
     
 }
+
