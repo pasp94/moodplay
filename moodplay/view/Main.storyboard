@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VdF-c0-YUX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VdF-c0-YUX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="uJo-Vg-DpP" kind="relationship" relationship="viewControllers" id="F80-8B-JkC"/>
                         <segue destination="7vt-e2-6Tb" kind="relationship" relationship="viewControllers" id="Unv-4I-SWe"/>
+                        <segue destination="que-dT-4Ke" kind="relationship" relationship="viewControllers" id="Dlt-U6-gXQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iq7-7P-6Eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,6 +48,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOf-by-yas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473" y="888"/>
+        </scene>
+        <!--Recognizer-->
+        <scene sceneID="gdd-ir-ZNq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Recognizer" id="que-dT-4Ke" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZHe-ry-5Gg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWi-Eb-dSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472" y="-418"/>
         </scene>
     </scenes>
 </document>
