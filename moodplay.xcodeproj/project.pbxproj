@@ -22,6 +22,18 @@
 		4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7941FE4027C00ED832E /* SongDAO.swift */; };
 		4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7951FE4027C00ED832E /* UserDAO.swift */; };
 		4295A79E1FE4027D00ED832E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7971FE4027C00ED832E /* DAO.swift */; };
+		4DCFF49D1FE5619E00281921 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCFF49C1FE5619E00281921 /* Configuration.storyboard */; };
+		4DCFF4AA1FE561F300281921 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF49E1FE561F200281921 /* MainViewController.swift */; };
+		4DCFF4AB1FE561F300281921 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF49F1FE561F200281921 /* FourthViewController.swift */; };
+		4DCFF4AC1FE561F300281921 /* gradient.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A01FE561F200281921 /* gradient.mov */; };
+		4DCFF4AD1FE561F300281921 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A11FE561F200281921 /* SeventhViewController.swift */; };
+		4DCFF4AE1FE561F300281921 /* NinethViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A21FE561F200281921 /* NinethViewController.swift */; };
+		4DCFF4AF1FE561F300281921 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A31FE561F200281921 /* FifthViewController.swift */; };
+		4DCFF4B01FE561F300281921 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A41FE561F200281921 /* FirstViewController.swift */; };
+		4DCFF4B11FE561F300281921 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A51FE561F200281921 /* SixthViewController.swift */; };
+		4DCFF4B21FE561F300281921 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A61FE561F200281921 /* ThirdViewController.swift */; };
+		4DCFF4B41FE561F300281921 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A81FE561F200281921 /* SecondViewController.swift */; };
+		4DCFF4B51FE561F300281921 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCFF4A91FE561F200281921 /* EighthViewController.swift */; };
 		E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700969F1FE2D00F009FA0F2 /* Moodlist.swift */; };
 		E70096A41FE3282F009FA0F2 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A31FE3282F009FA0F2 /* Song.swift */; };
 		E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A51FE328A5009FA0F2 /* Mood.swift */; };
@@ -49,6 +61,18 @@
 		4295A7941FE4027C00ED832E /* SongDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDAO.swift; sourceTree = "<group>"; };
 		4295A7951FE4027C00ED832E /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		4295A7971FE4027C00ED832E /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		4DCFF49C1FE5619E00281921 /* Configuration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Configuration.storyboard; path = ../../../../defini/Configuration.storyboard; sourceTree = "<group>"; };
+		4DCFF49E1FE561F200281921 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/MainViewController.swift; sourceTree = "<group>"; };
+		4DCFF49F1FE561F200281921 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourthViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/FourthViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A01FE561F200281921 /* gradient.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = gradient.mov; path = ../../../../defini/moodplay/moodplay/controllers/gradient.mov; sourceTree = "<group>"; };
+		4DCFF4A11FE561F200281921 /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeventhViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/SeventhViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A21FE561F200281921 /* NinethViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NinethViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/NinethViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A31FE561F200281921 /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FifthViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/FifthViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A41FE561F200281921 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/FirstViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A51FE561F200281921 /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SixthViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/SixthViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A61FE561F200281921 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/ThirdViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A81FE561F200281921 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/SecondViewController.swift; sourceTree = "<group>"; };
+		4DCFF4A91FE561F200281921 /* EighthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EighthViewController.swift; path = ../../../../defini/moodplay/moodplay/controllers/EighthViewController.swift; sourceTree = "<group>"; };
 		E700969F1FE2D00F009FA0F2 /* Moodlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moodlist.swift; sourceTree = "<group>"; };
 		E70096A31FE3282F009FA0F2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E70096A51FE328A5009FA0F2 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -120,6 +144,7 @@
 		423B58A71FE047B100D14E0F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4DCFF49C1FE5619E00281921 /* Configuration.storyboard */,
 				1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */,
 				1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */,
 				1B7EF8E71FDEF64F006A12D4 /* LaunchScreen.storyboard */,
@@ -131,6 +156,17 @@
 		423B58A81FE047C300D14E0F /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DCFF4A91FE561F200281921 /* EighthViewController.swift */,
+				4DCFF4A31FE561F200281921 /* FifthViewController.swift */,
+				4DCFF4A41FE561F200281921 /* FirstViewController.swift */,
+				4DCFF49F1FE561F200281921 /* FourthViewController.swift */,
+				4DCFF4A01FE561F200281921 /* gradient.mov */,
+				4DCFF49E1FE561F200281921 /* MainViewController.swift */,
+				4DCFF4A21FE561F200281921 /* NinethViewController.swift */,
+				4DCFF4A81FE561F200281921 /* SecondViewController.swift */,
+				4DCFF4A11FE561F200281921 /* SeventhViewController.swift */,
+				4DCFF4A51FE561F200281921 /* SixthViewController.swift */,
+				4DCFF4A61FE561F200281921 /* ThirdViewController.swift */,
 				1B7107EE1FE40C5D00620D82 /* customObjects */,
 				1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */,
 				1B7EF8E01FDEF64F006A12D4 /* ViewController.swift */,
@@ -241,7 +277,9 @@
 				1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */,
 				1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */,
 				1B7EF8E91FDEF64F006A12D4 /* LaunchScreen.storyboard in Resources */,
+				4DCFF49D1FE5619E00281921 /* Configuration.storyboard in Resources */,
 				1B7EF8E61FDEF64F006A12D4 /* Assets.xcassets in Resources */,
+				4DCFF4AC1FE561F300281921 /* gradient.mov in Resources */,
 				1B7EF8E41FDEF64F006A12D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,21 +291,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCFF4AF1FE561F300281921 /* FifthViewController.swift in Sources */,
 				1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */,
 				E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */,
+				4DCFF4B41FE561F300281921 /* SecondViewController.swift in Sources */,
+				4DCFF4AD1FE561F300281921 /* SeventhViewController.swift in Sources */,
 				1B7EF8E11FDEF64F006A12D4 /* ViewController.swift in Sources */,
 				E7DCAAB11FE32FF3003967F2 /* MoodlistCollectionViewCell.swift in Sources */,
+				4DCFF4B01FE561F300281921 /* FirstViewController.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */,
 				1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */,
+				4DCFF4AA1FE561F300281921 /* MainViewController.swift in Sources */,
 				E70096AA1FE329D8009FA0F2 /* MoodlistCollectionViewController.swift in Sources */,
+				4DCFF4AE1FE561F300281921 /* NinethViewController.swift in Sources */,
 				E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */,
 				4295A79E1FE4027D00ED832E /* DAO.swift in Sources */,
+				4DCFF4B11FE561F300281921 /* SixthViewController.swift in Sources */,
 				4295A79A1FE4027D00ED832E /* ProtocolDAO.swift in Sources */,
 				E70096A41FE3282F009FA0F2 /* Song.swift in Sources */,
 				1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */,
+				4DCFF4B51FE561F300281921 /* EighthViewController.swift in Sources */,
 				E70096A81FE328E6009FA0F2 /* User.swift in Sources */,
 				4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */,
+				4DCFF4AB1FE561F300281921 /* FourthViewController.swift in Sources */,
+				4DCFF4B21FE561F300281921 /* ThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
