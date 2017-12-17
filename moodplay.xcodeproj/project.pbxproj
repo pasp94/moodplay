@@ -29,7 +29,7 @@
 		1B7EF8E61FDEF64F006A12D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8E51FDEF64F006A12D4 /* Assets.xcassets */; };
 		1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */; };
 		1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */; };
-		1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */; };
+		1BBF87AB1FE042E800BACF45 /* Moods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF87AA1FE042E800BACF45 /* Moods.storyboard */; };
 		4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */; };
 		4295A79A1FE4027D00ED832E /* ProtocolDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7931FE4027C00ED832E /* ProtocolDAO.swift */; };
 		4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7941FE4027C00ED832E /* SongDAO.swift */; };
@@ -68,7 +68,7 @@
 		1B7EF8F41FDF3507006A12D4 /* moodplay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = moodplay.entitlements; sourceTree = "<group>"; };
 		1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodlist.storyboard; sourceTree = "<group>"; };
-		1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
+		1BBF87AA1FE042E800BACF45 /* Moods.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moods.storyboard; sourceTree = "<group>"; };
 		4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDAO.swift; sourceTree = "<group>"; };
 		4295A7931FE4027C00ED832E /* ProtocolDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDAO.swift; sourceTree = "<group>"; };
 		4295A7941FE4027C00ED832E /* SongDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDAO.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				1B7C9CA31FE586B700537EAA /* Main.storyboard */,
 				1B7C9CA61FE5D50D00537EAA /* Recognizer.storyboard */,
 				1B7C9C9B1FE5845000537EAA /* Configuration.storyboard */,
-				1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */,
+				1BBF87AA1FE042E800BACF45 /* Moods.storyboard */,
 				1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */,
 			);
 			path = view;
@@ -284,7 +284,7 @@
 			files = (
 				1B7C9CA51FE586B700537EAA /* Main.storyboard in Resources */,
 				1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */,
-				1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */,
+				1BBF87AB1FE042E800BACF45 /* Moods.storyboard in Resources */,
 				1B7C9C9C1FE5845000537EAA /* Configuration.storyboard in Resources */,
 				1B7C9CA71FE5D50D00537EAA /* Recognizer.storyboard in Resources */,
 				1B7C9CA41FE586B700537EAA /* LaunchScreen.storyboard in Resources */,

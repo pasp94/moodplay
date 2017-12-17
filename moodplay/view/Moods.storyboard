@@ -10,17 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Moods-->
         <scene sceneID="Udl-dV-Cyq">
             <objects>
-                <viewController id="Y1q-Ld-hQ4" sceneMemberID="viewController">
+                <viewController id="Y1q-Ld-hQ4" userLabel="Moods" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e0j-87-rsa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4Gh-tj-OHa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="moods_icon" id="DBu-A6-RER"/>
+                    <tabBarItem key="tabBarItem" title="Moods" image="moods_icon" id="DBu-A6-RER"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsP-xx-fyv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Moods-->
+        <!--Moodslist-->
         <scene sceneID="JTq-Uc-Tfm">
             <objects>
-                <collectionViewController title="Moods" id="EoI-MJ-ROF" customClass="MoodlistCollectionViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Moods" id="EoI-MJ-ROF" userLabel="Moodslist" customClass="MoodlistCollectionViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dyE-5a-OvU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
