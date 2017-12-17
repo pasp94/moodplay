@@ -30,6 +30,7 @@
 		1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */; };
 		1B7EF8FB1FDFF54D006A12D4 /* Moodlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */; };
 		1BBF87AB1FE042E800BACF45 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */; };
+		4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */; };
 		4295A79A1FE4027D00ED832E /* ProtocolDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7931FE4027C00ED832E /* ProtocolDAO.swift */; };
 		4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7941FE4027C00ED832E /* SongDAO.swift */; };
 		4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7951FE4027C00ED832E /* UserDAO.swift */; };
@@ -68,6 +69,7 @@
 		1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1B7EF8FA1FDFF54D006A12D4 /* Moodlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodlist.storyboard; sourceTree = "<group>"; };
 		1BBF87AA1FE042E800BACF45 /* MyProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
+		4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDAO.swift; sourceTree = "<group>"; };
 		4295A7931FE4027C00ED832E /* ProtocolDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDAO.swift; sourceTree = "<group>"; };
 		4295A7941FE4027C00ED832E /* SongDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDAO.swift; sourceTree = "<group>"; };
 		4295A7951FE4027C00ED832E /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		4295A7921FE4027C00ED832E /* dao */ = {
 			isa = PBXGroup;
 			children = (
+				4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */,
 				4295A7931FE4027C00ED832E /* ProtocolDAO.swift */,
 				4295A7941FE4027C00ED832E /* SongDAO.swift */,
 				4295A7951FE4027C00ED832E /* UserDAO.swift */,
@@ -300,6 +303,7 @@
 				1B7C9C971FE5832200537EAA /* ThirdViewController.swift in Sources */,
 				1B7C9C931FE5832200537EAA /* FirstViewController.swift in Sources */,
 				1B7C9C991FE5832200537EAA /* FifthViewController.swift in Sources */,
+				4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */,
 				1B7C9C981FE5832200537EAA /* SixthViewController.swift in Sources */,
 				1B7C9C951FE5832200537EAA /* SecondViewController.swift in Sources */,
 				1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */,
