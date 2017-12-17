@@ -16,7 +16,6 @@ class MoodDAO : DAO, ProtocolDAO {
     
     static let shared = MoodDAO()
 
-    //
     let readObjectFromCloudDispatchQueue = DispatchQueue(label: "READ_OBJECT_FROM_CLOUD")
     let fetchObjectsDispatchQueue = DispatchQueue(label: "FETCH_OBJECTS")
     let updateRecordDispatchQueue = DispatchQueue(label: "UPDATE_RECORD")
