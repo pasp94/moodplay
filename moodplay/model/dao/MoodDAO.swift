@@ -141,5 +141,41 @@ class MoodDAO : DAO, ProtocolDAO {
     
     
 }
+    func readAllObjects() -> [AnyObject]
+    {
+        let query = CKQuery(recordType: "MoodPlayMood", predicate: NSPredicate(value: true))
+        
+        var moods = [Mood]()
+        
+        fetchObjectsDispatchQueue.sync {
+            
+            //MySingleton.shared.finished_query = false
+            self.dispatchGroup.enter()
+            
+            self.database.perform(query, inZoneWith: nil, completionHandler: {
+                
+                result, error in
+                
+                
+                for r in result!
+                {
+                    let name = r.object(forKey: "name")! as! String
+                    let rgb = r.object(forKey: "color")! as! [Float]
+                    
+                    moods.append(Mood(name: name, color: RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])))
+                    
+                }
+                
+                //MySingleton.shared.finished_query = true
+                self.dispatchGroup.leave()
+                
+            })
+            
+            //while MySingleton.shared.finished_query != true {}
+            self.dispatchGroup.wait()
+        }
+        
+        return moods
+    }
 
 }

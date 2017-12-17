@@ -15,4 +15,5 @@ import Foundation
     func deleteRecord(id: String)
     func updateRecord(id: String, object: AnyObject)
     @objc optional func fetchObjects(field: String, equalTo: String) -> [AnyObject]
+    @objc optional func readAllObjects() -> [AnyObject]
 }

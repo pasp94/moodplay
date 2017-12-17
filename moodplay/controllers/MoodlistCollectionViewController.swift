@@ -16,10 +16,11 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
     fileprivate let itemsPerRow : CGFloat = 2
     
     //
+    var moods = [Mood]() // Pasquale Pelliccia
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        moods = MoodDAO.shared.readAllObjects() as! [Mood]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,12 +48,14 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+        
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        //return 3
+        return moods.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,12 +65,15 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
         // Configure the cell
         let index = indexPath.item
         
-        cell.backgroundColor = UIColor.blue
+        //cell.backgroundColor = UIColor.blue commentato da Pasquale Pelliccia
+        cell.backgroundColor = UIColor(red: CGFloat(moods[indexPath.row].color.r), green: CGFloat(moods[indexPath.row].color.g), blue: CGFloat(moods[indexPath.row].color.b), alpha: 1.0)
         // cell.backgroundColor = UIColor(red: mood.color.r, green:mood.color.g, blue:mood.color.b, alpha:1.0)
         cell.layer.cornerRadius = 5
         // cell.titleLabel.text = moodlist.title
-        cell.titleLabel.text = "Titolo"
+        //cell.titleLabel.text = "Titolo" commentato da Pasquale Pelliccia
+        cell.titleLabel.text = moods[indexPath.row].name
         cell.titleLabel.textColor = UIColor.black
+
         
         
         return cell
