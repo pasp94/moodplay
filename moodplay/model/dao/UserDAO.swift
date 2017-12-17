@@ -24,7 +24,7 @@ class UserDAO: ProtocolDAO{
         
         let user = object as! User
         
-        let record = CKRecord(recordType: "MoodplayUser", recordID: CKRecordID(recordName: "user_data"))
+        let record = CKRecord(recordType: "MoodPlayUser", recordID: CKRecordID(recordName: "user_data"))
         record.setValue(user.name, forKey: "name")
         record.setValue(user.surname, forKey: "surname")
         record.setValue(user.age, forKey: "age")
