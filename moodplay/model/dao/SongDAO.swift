@@ -16,6 +16,7 @@ class SongDAO: DAO, ProtocolDAO
     static let shared = SongDAO()
     let readObjectFromCloudDispatchQueue = DispatchQueue(label: "READ_OBJECT_FROM_CLOUD")
     let fetchObjectsDispatchQueue = DispatchQueue(label: "FETCH_OBJECTS")
+    let updateRecordDispatchQueue = DispatchQueue(label: "UPDATE_RECORD")
     let dispatchGroup  = DispatchGroup()
     
     private override init(){}
@@ -156,13 +157,58 @@ class SongDAO: DAO, ProtocolDAO
     }
     
     func updateRecord(id: String, object: AnyObject) {
-        deleteRecord(id: id)
-        writeObjectToCloud(object: object)
+        
+        updateRecordDispatchQueue.sync {
+            self.dispatchGroup.enter()
+            self.database.delete(withRecordID: CKRecordID(recordName: id), completionHandler: {
+                
+                
+                record,error in
+                
+                if record == nil{
+                    print(error!)
+                    return
+                }
+                print("record deleted successfully")
+                
+                self.dispatchGroup.leave()
+            })
+            
+            self.dispatchGroup.wait()
+            
+            self.dispatchGroup.enter()
+            let song = object as! Song
+            
+            let songRecord = CKRecord(recordType: "MoodPlaySong", recordID: CKRecordID(recordName: song.spotifyLink))
+            songRecord.setValue(song.author, forKey: "author")
+            songRecord.setValue(song.title, forKey: "title")
+            songRecord.setValue(song.album, forKey: "album")
+            songRecord.setValue(song.duration_ms, forKey: "duration_ms")
+            songRecord.setValue(song.mood, forKey: "mood")
+            songRecord.setValue(song.youtubeLink, forKey: "youtubeLink")
+            songRecord.setValue(song.spotifyLink, forKey: "spotifyLink")
+            songRecord.setValue(song.genres, forKey: "genres")
+            songRecord.setValue(song.spotifyPreviewURL, forKey: "spotifyPreviewURL")
+            songRecord.setValue(song.artwork, forKey: "artwork")
+            
+            self.database.save(songRecord){
+                
+                (record, error) in
+                
+                if error != nil{
+                    print(error!)
+                }
+                
+                guard record != nil else {return}
+                
+                print("saved record")
+                self.dispatchGroup.leave()
+            }
+            self.dispatchGroup.wait()
+            
+        }
+        
     }
-    
-    
-    
-    
-    
+
 }
 

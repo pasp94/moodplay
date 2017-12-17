@@ -11,12 +11,16 @@ import CloudKit
 
 
 class MoodDAO : DAO, ProtocolDAO {
+
+    
     
     static let shared = MoodDAO()
 
     //
     let readObjectFromCloudDispatchQueue = DispatchQueue(label: "READ_OBJECT_FROM_CLOUD")
     let fetchObjectsDispatchQueue = DispatchQueue(label: "FETCH_OBJECTS")
+    let updateRecordDispatchQueue = DispatchQueue(label: "UPDATE_RECORD")
+    
     let dispatchGroup  = DispatchGroup()
     
     private override init(){}
@@ -25,9 +29,9 @@ class MoodDAO : DAO, ProtocolDAO {
         
         let mood = object as! Mood
         
-        let moodRecord = CKRecord(recordType: "MoodplayMood", recordID: CKRecordID(recordName: mood.name))
+        let moodRecord = CKRecord(recordType: "MoodPlayMood", recordID: CKRecordID(recordName: mood.name))
         moodRecord.setValue(mood.name, forKey: "name")
-        moodRecord.setValue(mood.color, forKey: "color")
+        moodRecord.setValue([mood.color.r, mood.color.g, mood.color.b], forKey: "color")
         
         self.database.save(moodRecord, completionHandler: {
             (record, error) in
@@ -55,7 +59,10 @@ class MoodDAO : DAO, ProtocolDAO {
                 guard record != nil else {return}
                 
                 let name = record!["name"] as! String
-                let color = record!["color"] as! RGBColor
+                let rgb = record!["color"] as! [Float]
+                
+                
+                let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
                 
                 data = Mood(name: name, color: color)
                 
@@ -68,6 +75,71 @@ class MoodDAO : DAO, ProtocolDAO {
         return data!
     }
     
+    func deleteRecord(id: String) {
+        database.delete(withRecordID: CKRecordID(recordName: id), completionHandler: {
+            
+            record,error in
+            
+            
+            if record == nil{
+                print(error!)
+                return
+            }
+            print("record deleted successfully")
+            
+            
+        })
+    }
+    
+    func updateRecord(id: String, object: AnyObject) {
+        
+        updateRecordDispatchQueue.sync {
+            self.dispatchGroup.enter()
+            self.database.delete(withRecordID: CKRecordID(recordName: id), completionHandler: {
+                
+                
+                record,error in
+                
+                if record == nil{
+                    print(error!)
+                    return
+                }
+                print("record deleted successfully")
+                
+                self.dispatchGroup.leave()
+            })
+            
+            self.dispatchGroup.wait()
+            
+            self.dispatchGroup.enter()
+            let mood = object as! Mood
+            
+            let moodRecord = CKRecord(recordType: "MoodPlayMood", recordID: CKRecordID(recordName: mood.name))
+            moodRecord.setValue(mood.name, forKey: "name")
+            moodRecord.setValue([mood.color.r, mood.color.g, mood.color.b], forKey: "color")
+            
+            self.database.save(moodRecord, completionHandler: {
+                (record, error) in
+                
+                if error != nil{
+                    print(error as! String)
+                    return
+                }
+                
+                print("Saved record")
+                self.dispatchGroup.leave()
+                
+            })
+            
+            self.dispatchGroup.wait()
+            
+            
+            
+            
+    }
     
     
+    
+}
+
 }
