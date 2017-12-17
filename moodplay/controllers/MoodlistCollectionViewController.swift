@@ -41,6 +41,11 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Qui passiamo la moodlist alla tableview
+        if let nextVC = segue.destination as? MoodlistTableViewController{
+            let cell = sender as! MoodlistCollectionViewCell
+            let indexPath = self.collectionView?.indexPath(for: cell)
+            nextVC.songs = SongDAO.shared.fetchObjects(field: "mood", equalTo: moods[(indexPath?.row)!].name) as! [Song]
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -89,8 +94,11 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showSongs", sender: nil)
+        let cell = collectionView.cellForItem(at: indexPath)
+        self.performSegue(withIdentifier: "showSongs", sender: cell)
     }
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*

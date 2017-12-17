@@ -121,27 +121,40 @@
                                                 <action selector="addToMyMoodlist:" destination="519-4c-3jm" eventType="touchUpInside" id="R9I-MS-CyI"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-fM-unk">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-fM-unk">
                                             <rect key="frame" x="16" y="14" width="60" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX7-Ni-2iJ">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX7-Ni-2iJ">
                                             <rect key="frame" x="105" y="12" width="225" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-IX-JwN">
-                                            <rect key="frame" x="105" y="52" width="42" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-IX-JwN">
+                                            <rect key="frame" x="105" y="52" width="225" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.54794574873096447" green="0.54794574873096447" blue="0.54794574873096447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="iwx-fM-unk" secondAttribute="bottom" constant="14.5" id="1Nl-Ve-Y9u"/>
+                                        <constraint firstItem="AX7-Ni-2iJ" firstAttribute="leading" secondItem="CWf-6b-Bqv" secondAttribute="leading" constant="105" id="1Sq-D6-D4b"/>
+                                        <constraint firstAttribute="trailing" secondItem="lp6-IX-JwN" secondAttribute="trailing" constant="45" id="6F3-cl-kMM"/>
+                                        <constraint firstAttribute="trailing" secondItem="AX7-Ni-2iJ" secondAttribute="trailing" constant="45" id="7ZO-ms-0L0"/>
+                                        <constraint firstAttribute="bottom" secondItem="lp6-IX-JwN" secondAttribute="bottom" constant="16.5" id="Ffq-AH-5Z2"/>
+                                        <constraint firstAttribute="trailing" secondItem="iwx-fM-unk" secondAttribute="trailing" constant="299" id="Lci-ag-ige"/>
+                                        <constraint firstItem="iwx-fM-unk" firstAttribute="top" secondItem="CWf-6b-Bqv" secondAttribute="top" constant="14" id="SfM-bB-8Pg"/>
+                                        <constraint firstItem="lp6-IX-JwN" firstAttribute="top" secondItem="CWf-6b-Bqv" secondAttribute="top" constant="52" id="ccz-V9-dcc"/>
+                                        <constraint firstAttribute="bottom" secondItem="AX7-Ni-2iJ" secondAttribute="bottom" constant="44.5" id="gIu-h9-Tw3"/>
+                                        <constraint firstItem="AX7-Ni-2iJ" firstAttribute="top" secondItem="CWf-6b-Bqv" secondAttribute="top" constant="12" id="meQ-WM-wLK"/>
+                                        <constraint firstItem="iwx-fM-unk" firstAttribute="leading" secondItem="CWf-6b-Bqv" secondAttribute="leading" constant="16" id="sWY-wF-0BT"/>
+                                        <constraint firstItem="lp6-IX-JwN" firstAttribute="leading" secondItem="CWf-6b-Bqv" secondAttribute="leading" constant="105" id="wEH-SU-IQi"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorLabel" destination="lp6-IX-JwN" id="kot-Jb-HAi"/>
+                                    <outlet property="imageViewOutlet" destination="iwx-fM-unk" id="1ql-KI-XFP"/>
                                     <outlet property="titleLable" destination="AX7-Ni-2iJ" id="zaX-YL-GZr"/>
                                 </connections>
                             </tableViewCell>

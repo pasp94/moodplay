@@ -12,6 +12,8 @@ class MoodlistTableViewController: UITableViewController {
     
     var moodlist: Moodlist?
     
+    var songs = [Song]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +37,8 @@ class MoodlistTableViewController: UITableViewController {
 //            numberOfRows = (moodlist?.songs.count)! + 1
 //        }
 //
-        return 5
+        //return 5
+        return songs.count
     }
     
 
@@ -48,7 +51,21 @@ class MoodlistTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongTableViewCell
         
 //            let song = (moodlist?.songs[indexPath.row - 1])!
-            cell.titleLable.text = "Prova"
+            //cell.titleLable.text = "Prova"
+            
+            cell.titleLable.text = songs[indexPath.row].title
+            cell.authorLabel.text = songs[indexPath.row].author
+            
+            var data = Data()
+            
+            do{
+                data = try Data(contentsOf: URL(string: songs[indexPath.row].artwork)!)
+                cell.imageViewOutlet.image = UIImage(data: data)
+            }catch{
+                print(error)
+            }
+        
+            
             
             return cell
         }

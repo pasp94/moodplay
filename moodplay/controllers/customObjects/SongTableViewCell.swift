@@ -11,6 +11,9 @@ import UIKit
 class SongTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
+    @IBOutlet weak var imageViewOutlet: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

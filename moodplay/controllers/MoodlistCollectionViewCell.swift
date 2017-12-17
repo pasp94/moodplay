@@ -16,8 +16,10 @@ class MoodlistCollectionViewCell: UICollectionViewCell {
         didSet{
             if let moodlist = moodlist {
                 titleLabel.text = moodlist.title
+                
             }
         }
         
     }
+    
 }
