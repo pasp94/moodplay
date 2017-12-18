@@ -119,6 +119,7 @@
                                             <state key="normal" title="Button" image="Add Detail"/>
                                             <connections>
                                                 <action selector="addToMyMoodlist:" destination="519-4c-3jm" eventType="touchUpInside" id="R9I-MS-CyI"/>
+                                                <segue destination="sp8-VU-QXE" kind="show" id="c9N-U6-bNt"/>
                                             </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-fM-unk">
@@ -156,6 +157,7 @@
                                     <outlet property="authorLabel" destination="lp6-IX-JwN" id="kot-Jb-HAi"/>
                                     <outlet property="imageViewOutlet" destination="iwx-fM-unk" id="1ql-KI-XFP"/>
                                     <outlet property="titleLable" destination="AX7-Ni-2iJ" id="zaX-YL-GZr"/>
+                                    <segue destination="X6e-OZ-zrv" kind="show" id="HLK-AG-sHe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,6 +170,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzd-ub-Bsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136.8000000000002" y="-146.17691154422789"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="BhE-6Y-ERI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Player" id="X6e-OZ-zrv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmi-bH-jX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2821" y="-605"/>
+        </scene>
+        <!--Add to Moodlist-->
+        <scene sceneID="1fe-hN-fVs">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-DY-NqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Add to Moodlist" id="sp8-VU-QXE" customClass="AddToMoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="We9-XG-pqP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XJl-tJ-CTS" customClass="AddToMoodlistsTableViewCell" customModule="moodplay" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XJl-tJ-CTS" id="Cr7-ez-Oiq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sp8-VU-QXE" id="cEA-uG-NuE"/>
+                            <outlet property="delegate" destination="sp8-VU-QXE" id="zeP-uR-cEj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="3122" y="-146"/>
         </scene>
         <!--Moods-->
         <scene sceneID="wqX-5P-IlM">

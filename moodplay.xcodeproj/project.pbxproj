@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B19FBF1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */; };
+		19B19FC11FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */; };
+		19B19FC31FE811770087F863 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B19FC21FE811770087F863 /* Player.storyboard */; };
+		19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC41FE814100087F863 /* PlayerViewController.swift */; };
 		1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */; };
 		1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */; };
 		1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToMoodlistTableViewController.swift; path = moodplay/controllers/AddToMoodlistTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToMoodlistsTableViewCell.swift; sourceTree = "<group>"; };
+		19B19FC21FE811770087F863 /* Player.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		19B19FC41FE814100087F863 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlistTableViewController.swift; sourceTree = "<group>"; };
 		1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShuffleViewCell.swift; sourceTree = "<group>"; };
 		1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +104,7 @@
 		1B7107EE1FE40C5D00620D82 /* customObjects */ = {
 			isa = PBXGroup;
 			children = (
+				19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */,
 				1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */,
 				1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */,
 			);
@@ -165,6 +174,7 @@
 				1B7C9CA31FE586B700537EAA /* Main.storyboard */,
 				1B7C9CA61FE5D50D00537EAA /* Recognizer.storyboard */,
 				1B7C9C9B1FE5845000537EAA /* Configuration.storyboard */,
+				19B19FC21FE811770087F863 /* Player.storyboard */,
 				1BBF87AA1FE042E800BACF45 /* Moodlists.storyboard */,
 				1B7EF8FA1FDFF54D006A12D4 /* Moods.storyboard */,
 			);
@@ -177,6 +187,8 @@
 				1B7C9CA11FE585ED00537EAA /* config controller */,
 				1B7C9C9D1FE584AE00537EAA /* MoodlistCollectionViewCell.swift */,
 				1B7107EE1FE40C5D00620D82 /* customObjects */,
+				19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */,
+				19B19FC41FE814100087F863 /* PlayerViewController.swift */,
 				1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */,
 				E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */,
 			);
@@ -284,6 +296,7 @@
 			files = (
 				1B7C9CA51FE586B700537EAA /* Main.storyboard in Resources */,
 				1B7EF8FB1FDFF54D006A12D4 /* Moods.storyboard in Resources */,
+				19B19FC31FE811770087F863 /* Player.storyboard in Resources */,
 				1BBF87AB1FE042E800BACF45 /* Moodlists.storyboard in Resources */,
 				1B7C9C9C1FE5845000537EAA /* Configuration.storyboard in Resources */,
 				1B7C9CA71FE5D50D00537EAA /* Recognizer.storyboard in Resources */,
@@ -301,17 +314,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B7C9C971FE5832200537EAA /* ThirdViewController.swift in Sources */,
+				19B19FC11FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift in Sources */,
 				1B7C9C931FE5832200537EAA /* FirstViewController.swift in Sources */,
 				1B7C9C991FE5832200537EAA /* FifthViewController.swift in Sources */,
 				4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */,
 				1B7C9C981FE5832200537EAA /* SixthViewController.swift in Sources */,
 				1B7C9C951FE5832200537EAA /* SecondViewController.swift in Sources */,
 				1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */,
+				19B19FBF1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift in Sources */,
 				E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */,
 				1B7C9C961FE5832200537EAA /* EighthViewController.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				1B7C9C9E1FE584AF00537EAA /* MoodlistCollectionViewCell.swift in Sources */,
 				1B7C9C941FE5832200537EAA /* NinethViewController.swift in Sources */,
+				19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */,
 				1B7C9C9A1FE5832200537EAA /* FourthViewController.swift in Sources */,
 				4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */,
 				1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */,

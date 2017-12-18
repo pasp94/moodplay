@@ -1,34 +1,15 @@
 //
-//  MoodlistTableViewController.swift
+//  AddToMoodlistTableViewController.swift
 //  moodplay
 //
-//  Created by Pasquale Spisto on 15/12/2017.
+//  Created by Matteo Russo on 18/12/17.
 //  Copyright © 2017 Pasquale Spisto. All rights reserved.
 //
 
 import UIKit
-import AVFoundation
 
+class AddToMoodlistTableViewController: UITableViewController {
 
-class MoodlistTableViewController: UITableViewController {
-    
-    var moodlist: Moodlist?
-    
-    var songs = [Song]()
-    
-    //Download URL and play
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Qui passiamo la tableview al player
-        if let nextVC = segue.destination as? PlayerViewController{
-            let cell = sender as! SongTableViewCell
-            let indexPath = self.tableView?.indexPath(for: cell)
-            nextVC.songs = songs
-            nextVC.index = indexPath!.row
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,54 +20,32 @@ class MoodlistTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-//        var numberOfRows = 0
-//        if section == 0 {
-//            numberOfRows = (moodlist?.songs.count)! + 1
-//        }
-//
-        //return 5
-        return songs.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
-    
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayShuffleViewCell
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongTableViewCell
-        
-//            let song = (moodlist?.songs[indexPath.row - 1])!
-            //cell.titleLable.text = "Prova"
-            
-            cell.titleLable.text = songs[indexPath.row].title
-            cell.authorLabel.text = songs[indexPath.row].author
-            
-            var data = Data()
-            
-            do{
-                data = try Data(contentsOf: URL(string: songs[indexPath.row].artwork)!)
-                cell.imageViewOutlet.image = UIImage(data: data)
-            }catch{
-                print(error)
-            }
-        
-            
-            
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
     }
-    
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -107,8 +66,6 @@ class MoodlistTableViewController: UITableViewController {
     }
     */
 
-    
-    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
