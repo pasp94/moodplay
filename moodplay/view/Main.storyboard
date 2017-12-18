@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="473" y="888"/>
         </scene>
-        <!--Moodlist-->
+        <!--Moodlists-->
         <scene sceneID="gdd-ir-ZNq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Moodlist" id="que-dT-4Ke" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Moodlists" id="que-dT-4Ke" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ZHe-ry-5Gg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWi-Eb-dSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
