@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-
 class Song
 {
+    
     
     var author: String
     var title: String
@@ -22,11 +22,12 @@ class Song
     var spotifyLink: String
     var spotifyPreviewURL: String
     var genres: [String]
-    var artwork: String
+    var artworks: [String]
+    // var test = UIColor(hex: "#b9e4f1")
     
     
     
-    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String, artwork: String){
+    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String, artworks: [String]){
         self.author = author
         self.title = title
         self.album = album
@@ -36,10 +37,9 @@ class Song
         self.duration_ms = duration_ms
         self.genres = genres
         self.spotifyPreviewURL = spotifyPreviewURL
-        self.artwork = artwork
+        self.artworks = artworks
     }
     
     
     
 }
-

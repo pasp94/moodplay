@@ -74,7 +74,7 @@ class MoodlistTableViewController: UITableViewController {
             var data = Data()
             
             do{
-                data = try Data(contentsOf: URL(string: songs[indexPath.row].artwork)!)
+                data = try Data(contentsOf: URL(string: songs[indexPath.row].artworks[2])!)
                 cell.imageViewOutlet.image = UIImage(data: data)
             }catch{
                 print(error)

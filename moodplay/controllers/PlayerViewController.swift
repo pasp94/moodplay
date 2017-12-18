@@ -85,7 +85,7 @@ class PlayerViewController: UIViewController {
         songAlbum.text = songs[index].album
         var data = Data()
         do{
-            data = try Data(contentsOf: URL(string: songs[index].artwork)!)
+            data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
             songAlbumImage.image = UIImage(data: data)
         }catch{
             print(error)
