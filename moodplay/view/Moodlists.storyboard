@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-72-CAY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add Detail" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-72-CAY">
                                 <rect key="frame" x="147" y="34" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
@@ -152,6 +152,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add Detail" width="44" height="44"/>
         <image name="moodlists_icon" width="29" height="29"/>
     </resources>
 </document>
