@@ -13,7 +13,6 @@
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <viewController hidesBottomBarWhenPushed="YES" id="8rJ-Kc-sve" customClass="PlayerViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -42,6 +41,9 @@
                                 <state key="normal" image="prev">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonLeftPressed:" destination="8rJ-Kc-sve" eventType="touchDown" id="lw0-zh-DdG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-4J-1xM">
                                 <rect key="frame" x="299" y="519" width="54" height="30"/>
@@ -49,6 +51,9 @@
                                 <state key="normal" image="next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonRightPressed:" destination="8rJ-Kc-sve" eventType="touchDown" id="UTW-kf-NJo"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="44y-jx-VnS">
                                 <rect key="frame" x="34" y="602" width="300" height="30"/>
@@ -121,6 +126,7 @@
                         <outlet property="songTitle" destination="cbi-Hf-m1E" id="spT-lU-pm6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="358.4707646176912"/>
         </scene>

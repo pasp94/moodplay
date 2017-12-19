@@ -59,8 +59,11 @@ class PlayerViewController: UIViewController {
         
         do {
             AudioPlayer = try AVAudioPlayer(contentsOf: url)
+            
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
             AudioPlayer.prepareToPlay()
             AudioPlayer.play()
+            
             
             
         } catch  {
@@ -68,6 +71,50 @@ class PlayerViewController: UIViewController {
             return
         }
         
+    }
+    
+  
+    
+    @IBAction func buttonLeftPressed(_ sender: Any) {
+        
+        if index != 0{
+           index = index - 1
+        }
+        else
+        {
+            index = songs.count - 1
+        }
+        AudioPlayer.stop()
+        downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
+        songTitle.text = songs[index].title
+        songArtist.text = songs[index].author
+        songAlbum.text = songs[index].album
+        var data = Data()
+        do{
+            data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
+            songAlbumImage.image = UIImage(data: data)
+        }catch{
+            print(error)
+        }
+        
+        
+    }
+    
+    @IBAction func buttonRightPressed(_ sender: Any) {
+        
+        index = (index + 1) % songs.count
+        AudioPlayer.stop()
+        downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
+        songTitle.text = songs[index].title
+        songArtist.text = songs[index].author
+        songAlbum.text = songs[index].album
+        var data = Data()
+        do{
+            data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
+            songAlbumImage.image = UIImage(data: data)
+        }catch{
+            print(error)
+        }
     }
     
     override func viewDidLoad() {
