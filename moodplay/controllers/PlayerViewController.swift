@@ -9,6 +9,25 @@
 import UIKit
 import AVFoundation
 
+extension String {
+    subscript(value: PartialRangeUpTo<Int>) -> Substring {
+        get {
+            return self[..<index(startIndex, offsetBy: value.upperBound)]
+        }
+    }
+    
+    subscript(value: PartialRangeThrough<Int>) -> Substring {
+        get {
+            return self[...index(startIndex, offsetBy: value.upperBound)]
+        }
+    }
+    
+    subscript(value: PartialRangeFrom<Int>) -> Substring {
+        get {
+            return self[index(startIndex, offsetBy: value.lowerBound)...]
+        }
+    }
+}
 
 class PlayerViewController: UIViewController {
     
@@ -21,7 +40,8 @@ class PlayerViewController: UIViewController {
     var index = 0
     var flag = 1
     
-
+    @IBOutlet weak var duration: UILabel!
+    
     
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var songArtist: UILabel!
@@ -60,9 +80,14 @@ class PlayerViewController: UIViewController {
         do {
             AudioPlayer = try AVAudioPlayer(contentsOf: url)
             
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
+            DispatchQueue.main.async {
+                self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
+                self.duration.text = "-"+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
+            }
+            
             AudioPlayer.prepareToPlay()
             AudioPlayer.play()
+            
             
             
             
@@ -70,6 +95,7 @@ class PlayerViewController: UIViewController {
             print(error)
             return
         }
+        
         
     }
     
@@ -125,8 +151,6 @@ class PlayerViewController: UIViewController {
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
         
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-        
-        
         songTitle.text = songs[index].title
         songArtist.text = songs[index].author
         songAlbum.text = songs[index].album
