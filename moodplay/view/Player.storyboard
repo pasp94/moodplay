@@ -13,7 +13,7 @@
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="8rJ-Kc-sve" customClass="PlayerViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="8rJ-Kc-sve" customClass="PlayerViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,13 +55,16 @@
                                     <action selector="buttonRightPressed:" destination="8rJ-Kc-sve" eventType="touchDown" id="UTW-kf-NJo"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="44y-jx-VnS">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="44y-jx-VnS">
                                 <rect key="frame" x="34" y="602" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.2029392958" green="1" blue="0.75547384620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="volumeSlider:" destination="8rJ-Kc-sve" eventType="valueChanged" id="av4-ej-04O"/>
+                                </connections>
                             </slider>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="4eR-bM-3N7">
-                                <rect key="frame" x="20" y="374" width="337" height="1.5"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eR-bM-3N7">
+                                <rect key="frame" x="20" y="372.5" width="337" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="progressTintColor" red="0.2029392958" green="1" blue="0.75547384620000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,8 +76,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-3:18" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHV-W7-vZX">
-                                <rect key="frame" x="302" y="382" width="57" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03:18" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHV-W7-vZX">
+                                <rect key="frame" x="308" y="382" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -119,8 +122,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="currentTime" destination="7Kp-zd-srk" id="uk1-Ou-HqQ"/>
                         <outlet property="duration" destination="bHV-W7-vZX" id="hQ9-be-vvF"/>
                         <outlet property="playOrPauseButton" destination="30p-vg-J6d" id="Dsr-4e-n5X"/>
+                        <outlet property="progressBar" destination="4eR-bM-3N7" id="yH5-Kh-LsI"/>
                         <outlet property="songAlbum" destination="i2y-Zf-D1g" id="oN8-Yv-5mT"/>
                         <outlet property="songAlbumImage" destination="eUv-Eg-B6N" id="OLn-7y-qeS"/>
                         <outlet property="songArtist" destination="gHq-1T-dF1" id="YkP-N7-QbG"/>

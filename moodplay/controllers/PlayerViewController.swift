@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+
+
 extension String {
     subscript(value: PartialRangeUpTo<Int>) -> Substring {
         get {
@@ -31,8 +33,10 @@ extension String {
 
 class PlayerViewController: UIViewController {
     
-    
-
+    var seconds = 0
+    var songDuration = 30
+    var timer = Timer()
+    var isTimerRunning = false
     var AudioPlayer = AVAudioPlayer()
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
@@ -43,19 +47,28 @@ class PlayerViewController: UIViewController {
     var played = false
     
     @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var currentTime: UILabel!
     
+    @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var songArtist: UILabel!
     @IBOutlet weak var songAlbum: UILabel!
     @IBOutlet weak var songAlbumImage: UIImageView!
     
+    
+    @IBAction func volumeSlider(_ sender: UISlider) {
+        AudioPlayer.volume = sender.value
+    }
+    
     @IBAction func playOrPause(_ sender: UIButton){
         
         if AudioPlayer.isPlaying == true
         {
             sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            AudioPlayer.stop()
+        
+          AudioPlayer.stop()
+          
             
         }
         else
@@ -85,6 +98,7 @@ class PlayerViewController: UIViewController {
             DispatchQueue.main.async {
                 self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
                 self.duration.text = "-"+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
+                
             }
             
             AudioPlayer.prepareToPlay()
@@ -98,11 +112,35 @@ class PlayerViewController: UIViewController {
             return
         }
         
-        
     }
     
-  
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
     
+    @objc func updateTimer() {
+        seconds += 1     //This will incrementthe seconds.
+        currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
+        let progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
+        progressBar.progress += progressPercent * 17
+        print(progressPercent)
+    }
+    
+//    func runTimerMinus() {
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimerMinus)), userInfo: nil, repeats: true)
+//    }
+    
+////    @objc func updateTimerMinus() {
+//        self.songs[self.index].duration_ms += -1     //This will decrement(count down)the seconds.
+//        duration.text = "-"+String((self.songs[self.index].duration_ms/100)).replacingOccurrences(of: ".", with: ":")[...3] //This will update the label.
+//    }
+
+func timeString(time:TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i", minutes, seconds)
+    }
+
     @IBAction func buttonLeftPressed(_ sender: Any) {
         
         if index != 0{
@@ -147,7 +185,10 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       runTimer()
+        updateTimer()
+//        runTimerMinus()
+//        updateTimerMinus()
         
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
