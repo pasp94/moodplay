@@ -39,6 +39,8 @@ class PlayerViewController: UIViewController {
     var songs = [Song] ()
     var index = 0
     var flag = 1
+    var stopped = false
+    var played = false
     
     @IBOutlet weak var duration: UILabel!
     
@@ -59,8 +61,7 @@ class PlayerViewController: UIViewController {
         else
         {
             sender.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-            downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-            
+            AudioPlayer.play()
         }
     }
     @IBOutlet weak var playOrPauseButton: UIButton!
@@ -71,6 +72,7 @@ class PlayerViewController: UIViewController {
         downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
             customURL, response, error in
             self.playUrl(url: customURL!)
+            
         })
         downloadTask.resume()
     }
@@ -78,7 +80,7 @@ class PlayerViewController: UIViewController {
     func playUrl (url: URL){
         
         do {
-            AudioPlayer = try AVAudioPlayer(contentsOf: url)
+            self.AudioPlayer = try AVAudioPlayer(contentsOf: url)
             
             DispatchQueue.main.async {
                 self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
