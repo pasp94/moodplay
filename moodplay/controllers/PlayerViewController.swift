@@ -179,6 +179,9 @@ func timeString(time:TimeInterval) -> String {
         songTitle.text = songs[index].title
         songArtist.text = songs[index].author
         songAlbum.text = songs[index].album
+        currentTime.text = ""
+        resetTimer()
+        updateTimer()
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
@@ -187,7 +190,6 @@ func timeString(time:TimeInterval) -> String {
             print(error)
         }
         
-        resetTimer()
         
         
     }
@@ -200,6 +202,9 @@ func timeString(time:TimeInterval) -> String {
         songTitle.text = songs[index].title
         songArtist.text = songs[index].author
         songAlbum.text = songs[index].album
+        currentTime.text = ""
+        resetTimer()
+        updateTimer()
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
@@ -207,7 +212,9 @@ func timeString(time:TimeInterval) -> String {
         }catch{
             print(error)
         }
+        currentTime.text = ""
         resetTimer()
+        updateTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -219,8 +226,9 @@ func timeString(time:TimeInterval) -> String {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)) 
-       runTimer()
-        updateTimer()
+        runTimer()
+        
+        
 //        runTimerMinus()
 //        updateTimerMinus()
         
