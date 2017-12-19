@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1980C8641FE8894A006BA6EB /* UserStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980C8631FE8894A006BA6EB /* UserStaticTableViewController.swift */; };
 		19B044E21FE883E800579EEF /* MoodlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B044E11FE883E800579EEF /* MoodlistsViewController.swift */; };
 		19B19FBF1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */; };
 		19B19FC11FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1980C8631FE8894A006BA6EB /* UserStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStaticTableViewController.swift; sourceTree = "<group>"; };
 		19B044E11FE883E800579EEF /* MoodlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodlistsViewController.swift; path = customObjects/MoodlistsViewController.swift; sourceTree = "<group>"; };
 		19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToMoodlistTableViewController.swift; path = moodplay/controllers/AddToMoodlistTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToMoodlistsTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */,
 				E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */,
 				19B19FC41FE814100087F863 /* PlayerViewController.swift */,
-				1980C8631FE8894A006BA6EB /* UserStaticTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */,
 				4295A79E1FE4027D00ED832E /* DAO.swift in Sources */,
 				4295A79A1FE4027D00ED832E /* ProtocolDAO.swift in Sources */,
-				1980C8641FE8894A006BA6EB /* UserStaticTableViewController.swift in Sources */,
 				E70096A41FE3282F009FA0F2 /* Song.swift in Sources */,
 				1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */,
 				E70096A81FE328E6009FA0F2 /* User.swift in Sources */,

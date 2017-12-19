@@ -34,6 +34,10 @@ class MoodlistsViewController: UIViewController, UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Radius Image
+        myImageView.layer.cornerRadius = myImageView.frame.size.width/2
+        myImageView.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
     }
     
