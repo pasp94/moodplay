@@ -10,7 +10,16 @@ import UIKit
 
 class RecognizerStarViewController: UIViewController {
 
+    @IBOutlet weak var startRecognitionButton: UIButton!
+    @IBOutlet weak var startingMessageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.startingMessageLabel.text = "Hi \(User.shared.name)! How do You feel now?"
+    }
+    
+    @IBAction func startToRecognize(_ sender: UIButton) {
+        
     }
 }

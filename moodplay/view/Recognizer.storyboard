@@ -17,18 +17,55 @@
                     <view key="view" contentMode="scaleToFill" id="oOw-MZ-Kn7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54c-zl-uiS">
+                                <rect key="frame" x="62" y="492" width="251" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Recognizing" backgroundImage="StartRecognitionBtn"/>
+                                <connections>
+                                    <action selector="startToRecognize:" destination="o4W-4K-5f5" eventType="touchUpInside" id="KSR-Jo-aPg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CalendarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-zc-hbE">
+                                <rect key="frame" x="82" y="271" width="68" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WeatherIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-SL-uxD">
+                                <rect key="frame" x="221" y="277" width="72" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HearthKit" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-iq-LII">
+                                <rect key="frame" x="151" y="181" width="72" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5U1-Es-zaJ">
+                                <rect key="frame" x="64" y="398" width="247" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="79A-wJ-E8o"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recognize" image="recognize_icon" id="Zb2-rd-mph"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="startRecognitionButton" destination="54c-zl-uiS" id="uAO-GH-aQ5"/>
+                        <outlet property="startingMessageLabel" destination="5U1-Es-zaJ" id="OIF-DF-K8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9S-yk-W4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="-418"/>
+            <point key="canvasLocation" x="471.19999999999999" y="-418.74062968515744"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CalendarIcon" width="68" height="72"/>
+        <image name="HearthKit" width="72" height="67"/>
+        <image name="StartRecognitionBtn" width="197" height="49"/>
+        <image name="WeatherIcon" width="72" height="60"/>
         <image name="recognize_icon" width="29" height="29"/>
     </resources>
 </document>
