@@ -116,6 +116,14 @@
                                 <rect key="frame" x="45" y="72" width="284" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSi-Zs-bUu">
+                                <rect key="frame" x="163" y="33" width="49" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="down_arrow"/>
+                                <connections>
+                                    <action selector="back:" destination="8rJ-Kc-sve" eventType="touchDown" id="Vk3-Ag-P05"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -136,8 +144,17 @@
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="358.4707646176912"/>
         </scene>
+        <!--LaunchScreen-->
+        <scene sceneID="q9c-s0-Bvc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LaunchScreen" id="eo3-l6-QWs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMZ-ts-ndX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1561" y="130"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="down_arrow" width="184" height="72"/>
         <image name="high volume" width="34" height="30"/>
         <image name="low volume" width="16" height="22"/>
         <image name="next" width="76" height="44"/>

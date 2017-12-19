@@ -43,8 +43,8 @@ class PlayerViewController: UIViewController {
     var songs = [Song] ()
     var index = 0
     var flag = 1
-    var stopped = false
-    var played = false
+
+    
     
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var currentTime: UILabel!
@@ -91,6 +91,7 @@ class PlayerViewController: UIViewController {
     }
     
     func playUrl (url: URL){
+    
         
         do {
             self.AudioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -113,7 +114,23 @@ class PlayerViewController: UIViewController {
         }
         
     }
+    func setStatusBarBackgroundColor(color: UIColor) {
+        
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        
+        statusBar.backgroundColor = color
+    }
     
+    @IBAction func back(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
+    func resetTimer(){
+        timer.invalidate()
+        runTimer()
+    }
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimer)), userInfo: nil, repeats: true)
     }
@@ -123,7 +140,14 @@ class PlayerViewController: UIViewController {
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
         let progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
         progressBar.progress += progressPercent * 17
-        print(progressPercent)
+        //print(progressPercent)
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        AudioPlayer.stop()
     }
     
 //    func runTimerMinus() {
@@ -163,6 +187,8 @@ func timeString(time:TimeInterval) -> String {
             print(error)
         }
         
+        resetTimer()
+        
         
     }
     
@@ -181,10 +207,18 @@ func timeString(time:TimeInterval) -> String {
         }catch{
             print(error)
         }
+        resetTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AudioPlayer.stop()
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)) 
        runTimer()
         updateTimer()
 //        runTimerMinus()

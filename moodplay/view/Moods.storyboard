@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -157,7 +158,10 @@
                                     <outlet property="authorLabel" destination="lp6-IX-JwN" id="kot-Jb-HAi"/>
                                     <outlet property="imageViewOutlet" destination="iwx-fM-unk" id="1ql-KI-XFP"/>
                                     <outlet property="titleLable" destination="AX7-Ni-2iJ" id="zaX-YL-GZr"/>
-                                    <segue destination="X6e-OZ-zrv" kind="show" id="HLK-AG-sHe"/>
+                                    <segue destination="X6e-OZ-zrv" kind="show" id="HLK-AG-sHe">
+                                        <segue key="commit" inheritsFrom="parent" id="WmA-zP-Kz0"/>
+                                        <segue key="preview" inheritsFrom="commit" id="kuG-Tf-g1R"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -182,7 +186,6 @@
         <!--Add to Moodlist-->
         <scene sceneID="1fe-hN-fVs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-DY-NqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Add to Moodlist" id="sp8-VU-QXE" customClass="AddToMoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="We9-XG-pqP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -204,6 +207,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-DY-NqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3122" y="-146"/>
         </scene>
@@ -232,4 +236,7 @@
         <image name="Add Detail" width="44" height="44"/>
         <image name="moods_icon" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HLK-AG-sHe"/>
+    </inferredMetricsTieBreakers>
 </document>
