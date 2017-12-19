@@ -43,6 +43,7 @@ class PlayerViewController: UIViewController {
     var songs = [Song] ()
     var index = 0
     var flag = 1
+    var timerIsOn = false
 
     
     
@@ -98,7 +99,7 @@ class PlayerViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-                self.duration.text = "-"+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
+                self.duration.text = ""+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
                 
             }
             
@@ -128,8 +129,10 @@ class PlayerViewController: UIViewController {
     }
     
     func resetTimer(){
+        
         timer.invalidate()
-        runTimer()
+        
+        
     }
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimer)), userInfo: nil, repeats: true)
@@ -140,7 +143,7 @@ class PlayerViewController: UIViewController {
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
         let progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
         progressBar.progress += progressPercent * 17
-        //print(progressPercent)
+       
     }
     
     func back(sender: UIBarButtonItem) {
@@ -150,14 +153,7 @@ class PlayerViewController: UIViewController {
         AudioPlayer.stop()
     }
     
-//    func runTimerMinus() {
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimerMinus)), userInfo: nil, repeats: true)
-//    }
-    
-////    @objc func updateTimerMinus() {
-//        self.songs[self.index].duration_ms += -1     //This will decrement(count down)the seconds.
-//        duration.text = "-"+String((self.songs[self.index].duration_ms/100)).replacingOccurrences(of: ".", with: ":")[...3] //This will update the label.
-//    }
+
 
 func timeString(time:TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
@@ -166,6 +162,9 @@ func timeString(time:TimeInterval) -> String {
     }
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
+        resetTimer()
+        updateTimer()
+        runTimer()
         
         if index != 0{
            index = index - 1
@@ -180,8 +179,6 @@ func timeString(time:TimeInterval) -> String {
         songArtist.text = songs[index].author
         songAlbum.text = songs[index].album
         currentTime.text = ""
-        resetTimer()
-        updateTimer()
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
@@ -192,9 +189,15 @@ func timeString(time:TimeInterval) -> String {
         
         
         
+        
     }
     
     @IBAction func buttonRightPressed(_ sender: Any) {
+        resetTimer()
+        updateTimer()
+        runTimer()
+       
+        
         
         index = (index + 1) % songs.count
         AudioPlayer.stop()
@@ -203,8 +206,7 @@ func timeString(time:TimeInterval) -> String {
         songArtist.text = songs[index].author
         songAlbum.text = songs[index].album
         currentTime.text = ""
-        resetTimer()
-        updateTimer()
+    
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
@@ -212,9 +214,8 @@ func timeString(time:TimeInterval) -> String {
         }catch{
             print(error)
         }
-        currentTime.text = ""
-        resetTimer()
-        updateTimer()
+      
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -225,12 +226,11 @@ func timeString(time:TimeInterval) -> String {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)) 
+        setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
         runTimer()
         
         
-//        runTimerMinus()
-//        updateTimerMinus()
+
         
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
