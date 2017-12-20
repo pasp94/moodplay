@@ -52,9 +52,9 @@ class PlayerViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
-    @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var songArtist: UILabel!
-    @IBOutlet weak var songAlbum: UILabel!
+    @IBOutlet weak var songTitle: MarqueeLabel!
+    @IBOutlet weak var songArtist: MarqueeLabel!
+    @IBOutlet weak var songAlbum: MarqueeLabel!
     @IBOutlet weak var songAlbumImage: UIImageView!
     
     
@@ -244,6 +244,21 @@ func timeString(time:TimeInterval) -> String {
         }
         let urlBackground = Bundle.main.url(forResource: "gradient", withExtension: "mov")
         
+        songTitle.tag = 101
+        songTitle.type = .continuous
+        songTitle.animationCurve = .easeInOut
+        
+        songArtist.tag = 101
+        songArtist.type = .continuous
+        songArtist.animationCurve = .easeInOut
+        
+        songAlbum.tag = 101
+        songAlbum.type = .continuous
+        songAlbum.animationCurve = .easeInOut
+        // Text string, fade length, leading buffer, trailing buffer, and scroll
+        // duration for this label are set via Interface Builder's Attributes Inspector!
+        
+        // Do any additional setup after loading the view, typically from a nib.
         
         
         Player = AVPlayer.init(url: urlBackground!)
