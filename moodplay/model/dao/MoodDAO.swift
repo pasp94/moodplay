@@ -11,11 +11,11 @@ import CloudKit
 
 
 class MoodDAO : DAO, ProtocolDAO {
-
+    
     
     
     static let shared = MoodDAO()
-
+    
     let readObjectFromCloudDispatchQueue = DispatchQueue(label: "READ_OBJECT_FROM_CLOUD")
     let fetchObjectsDispatchQueue = DispatchQueue(label: "FETCH_OBJECTS")
     let updateRecordDispatchQueue = DispatchQueue(label: "UPDATE_RECORD")
@@ -37,7 +37,7 @@ class MoodDAO : DAO, ProtocolDAO {
             
             if error != nil{
                 print(error as! String)
-            return
+                return
             }
             
             print("Saved record")
@@ -135,11 +135,11 @@ class MoodDAO : DAO, ProtocolDAO {
             
             
             
+        }
+        
+        
+        
     }
-    
-    
-    
-}
     func readAllObjects() -> [AnyObject]
     {
         let query = CKQuery(recordType: "MoodPlayMood", predicate: NSPredicate(value: true))
@@ -176,5 +176,83 @@ class MoodDAO : DAO, ProtocolDAO {
         
         return moods
     }
-
+    
+    
+    func fetchObjects(field: String, equalTo: String) -> [AnyObject ]  {
+        //let query = CKQuery(recordType: "Song", predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: "MoodPlayMood", predicate: NSPredicate(format: "\(field) = %@ ", equalTo))
+        
+        var moods = [Mood]()
+        
+        fetchObjectsDispatchQueue.sync {
+            
+            //MySingleton.shared.finished_query = false
+            self.dispatchGroup.enter()
+            
+            self.database.perform(query, inZoneWith: nil, completionHandler: {
+                
+                result, error in
+                
+                
+                for r in result!
+                {
+                    let name = r.object(forKey: "name")! as! String
+                    let rgb = r.object(forKey: "color")! as! [Float]
+                    let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
+                    
+                    moods.append(Mood(name: name, color: color))
+                    
+                }
+                
+                //MySingleton.shared.finished_query = true
+                self.dispatchGroup.leave()
+                
+            })
+            
+            //while MySingleton.shared.finished_query != true {}
+            self.dispatchGroup.wait()
+        }
+        
+        return moods
+    }
+    
+    func fetchObjects(field: String, notEqualTo: String) -> [AnyObject ]  {
+        //let query = CKQuery(recordType: "Song", predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: "MoodPlayMood", predicate: NSPredicate(format: "\(field) != %@ ", notEqualTo))
+        
+        var moods = [Mood]()
+        
+        fetchObjectsDispatchQueue.sync {
+            
+            //MySingleton.shared.finished_query = false
+            self.dispatchGroup.enter()
+            
+            self.database.perform(query, inZoneWith: nil, completionHandler: {
+                
+                result, error in
+                
+                
+                for r in result!
+                {
+                    let name = r.object(forKey: "name")! as! String
+                    let rgb = r.object(forKey: "color")! as! [Float]
+                    let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
+                    
+                    moods.append(Mood(name: name, color: color))
+                    
+                }
+                
+                //MySingleton.shared.finished_query = true
+                self.dispatchGroup.leave()
+                
+            })
+            
+            //while MySingleton.shared.finished_query != true {}
+            self.dispatchGroup.wait()
+        }
+        
+        return moods
+    }
+    
 }
+

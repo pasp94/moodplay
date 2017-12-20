@@ -31,5 +31,27 @@ class RecognitionViewController: UIViewController {
         changeMoodButton.layer.cornerRadius = 8
         changeMoodButton.backgroundColor = UIColor.orange
     }
+    
+    var changeMyMood = false
+    
+    @IBAction func leaveMood(_ sender: Any) {
+        changeMyMood = false
+    }
+    
+    @IBAction func changeMood(_ sender: Any) {
+        
+        changeMyMood = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let nextVC = segue.destination as? MoodlistCollectionViewController{
+            nextVC.recognizer = true
+            nextVC.recognizedMood = reconizedMoodLabel.text!.lowercased()
+            nextVC.changeMyMood = changeMyMood
+            
+            
+        }
+    }
 
 }
