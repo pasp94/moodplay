@@ -40,6 +40,7 @@
 		4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7941FE4027C00ED832E /* SongDAO.swift */; };
 		4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7951FE4027C00ED832E /* UserDAO.swift */; };
 		4295A79E1FE4027D00ED832E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7971FE4027C00ED832E /* DAO.swift */; };
+		42A888001FE9D1440013F679 /* MoodlistDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A887FF1FE9D1440013F679 /* MoodlistDAO.swift */; };
 		E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700969F1FE2D00F009FA0F2 /* Moodlist.swift */; };
 		E70096A41FE3282F009FA0F2 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A31FE3282F009FA0F2 /* Song.swift */; };
 		E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A51FE328A5009FA0F2 /* Mood.swift */; };
@@ -84,6 +85,7 @@
 		4295A7941FE4027C00ED832E /* SongDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDAO.swift; sourceTree = "<group>"; };
 		4295A7951FE4027C00ED832E /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		4295A7971FE4027C00ED832E /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		42A887FF1FE9D1440013F679 /* MoodlistDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodlistDAO.swift; sourceTree = "<group>"; };
 		E700969F1FE2D00F009FA0F2 /* Moodlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moodlist.swift; sourceTree = "<group>"; };
 		E70096A31FE3282F009FA0F2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E70096A51FE328A5009FA0F2 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		4295A7921FE4027C00ED832E /* dao */ = {
 			isa = PBXGroup;
 			children = (
+				42A887FF1FE9D1440013F679 /* MoodlistDAO.swift */,
 				4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */,
 				4295A7931FE4027C00ED832E /* ProtocolDAO.swift */,
 				4295A7941FE4027C00ED832E /* SongDAO.swift */,
@@ -329,6 +332,7 @@
 				1B7C9C961FE5832200537EAA /* EighthViewController.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				1B7C9C9E1FE584AF00537EAA /* MoodlistCollectionViewCell.swift in Sources */,
+				42A888001FE9D1440013F679 /* MoodlistDAO.swift in Sources */,
 				1B7C9C941FE5832200537EAA /* NinethViewController.swift in Sources */,
 				19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */,
 				1B7C9C9A1FE5832200537EAA /* FourthViewController.swift in Sources */,
