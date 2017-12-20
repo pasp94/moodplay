@@ -16,6 +16,7 @@
 		1B0546B61FE9C2830028C241 /* Recognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0546B51FE9C2830028C241 /* Recognizer.swift */; };
 		1B18A6A51FE9CC9D009FADD5 /* RecognizerStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */; };
 		1B18A6A81FE9E042009FADD5 /* WorkInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */; };
+		1B18A6AA1FEA64FA009FADD5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B18A6A91FEA64FA009FADD5 /* HealthKit.framework */; };
 		1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */; };
 		1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */; };
 		1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */; };
@@ -52,6 +53,8 @@
 		E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A51FE328A5009FA0F2 /* Mood.swift */; };
 		E70096A81FE328E6009FA0F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A71FE328E6009FA0F2 /* User.swift */; };
 		E70096AA1FE329D8009FA0F2 /* MoodlistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */; };
+		E7E0D96F1FEABB5000C32B20 /* DataEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0D96E1FEABB5000C32B20 /* DataEvaluationViewController.swift */; };
+		E7E0D9711FEABB7C00C32B20 /* RecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0D9701FEABB7C00C32B20 /* RecognitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,7 @@
 		1B0546B51FE9C2830028C241 /* Recognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognizer.swift; sourceTree = "<group>"; };
 		1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerStarViewController.swift; sourceTree = "<group>"; };
 		1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInformationViewController.swift; sourceTree = "<group>"; };
+		1B18A6A91FEA64FA009FADD5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlistTableViewController.swift; sourceTree = "<group>"; };
 		1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShuffleViewCell.swift; sourceTree = "<group>"; };
 		1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		E70096A51FE328A5009FA0F2 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		E70096A71FE328E6009FA0F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlistCollectionViewController.swift; sourceTree = "<group>"; };
+		E7E0D96E1FEABB5000C32B20 /* DataEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEvaluationViewController.swift; sourceTree = "<group>"; };
+		E7E0D9701FEABB7C00C32B20 /* RecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 			files = (
 				4D2182D81FEA676B003ED768 /* AVKit.framework in Frameworks */,
 				1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */,
+				1B18A6AA1FEA64FA009FADD5 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +128,10 @@
 		1B18A6A61FE9CCAC009FADD5 /* recognizer controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7E0D9701FEABB7C00C32B20 /* RecognitionViewController.swift */,
 				1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */,
 				1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */,
+				E7E0D96E1FEABB5000C32B20 /* DataEvaluationViewController.swift */,
 			);
 			path = "recognizer controllers";
 			sourceTree = "<group>";
@@ -188,7 +197,11 @@
 		1B7EF8F51FDF350A006A12D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+
+				1B18A6A91FEA64FA009FADD5 /* HealthKit.framework */,
+
 				4D2182D71FEA676B003ED768 /* AVKit.framework */,
+
 				1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -297,6 +310,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 							com.apple.InterAppAudio = {
 								enabled = 0;
 							};
@@ -364,6 +380,7 @@
 				E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */,
 				1B7C9C961FE5832200537EAA /* EighthViewController.swift in Sources */,
 				1B0546B61FE9C2830028C241 /* Recognizer.swift in Sources */,
+				E7E0D96F1FEABB5000C32B20 /* DataEvaluationViewController.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				1B7C9C9E1FE584AF00537EAA /* MoodlistCollectionViewCell.swift in Sources */,
 				19DE22281FEA9ABC00229731 /* CreatePlaylistViewController.swift in Sources */,
@@ -384,6 +401,7 @@
 				E70096A41FE3282F009FA0F2 /* Song.swift in Sources */,
 				1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */,
 				E70096A81FE328E6009FA0F2 /* User.swift in Sources */,
+				E7E0D9711FEABB7C00C32B20 /* RecognitionViewController.swift in Sources */,
 				4295A79B1FE4027D00ED832E /* SongDAO.swift in Sources */,
 				1B7C9C921FE5832200537EAA /* SeventhViewController.swift in Sources */,
 			);

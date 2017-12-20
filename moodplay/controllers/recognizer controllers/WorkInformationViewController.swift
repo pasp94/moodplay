@@ -39,5 +39,7 @@ class WorkInformationViewController: UIViewController {
     @IBAction func updateWorkHours(_ sender: UIButton) {
         Recognizer.shared.workHR = self.counter
         self.performSegue(withIdentifier: "showHealtCalculatorView", sender: self)
+        let variabile = Recognizer.shared.calculetSleepHours()
+        print(variabile)
     }
 }

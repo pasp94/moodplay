@@ -14,11 +14,7 @@ class NinethViewController: UIViewController {
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
      
-    @IBAction func sendToDb(_ sender: UIButton) {
-        UserDAO.shared.writeObjectToCloud(object: User.shared)
-        UserDefaults.standard.set(true , forKey: "hasConfigurated")
-        UserDefaults.standard.synchronize()
-    }
+
     
     
     override func viewDidLoad() {
@@ -48,12 +44,11 @@ class NinethViewController: UIViewController {
         Player.seek(to: kCMTimeZero)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func sendToDb(_ sender: UIButton) {
+        UserDAO.shared.writeObjectToCloud(object: User.shared)
+        UserDefaults.standard.set(true , forKey: "hasConfigurated")
+        UserDefaults.standard.synchronize()
     }
-    
-    
 }
 
 
