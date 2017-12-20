@@ -43,6 +43,7 @@ class CreatePlaylistViewController: UIViewController, UINavigationControllerDele
         MoodlistDAO.shared.writeObjectToCloud(object: Moodlist(id: "", title: playlistName.text!, description: playlistDescription.text!, songs: [song], image: myImageView.image!))
         
         navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         
         
 
