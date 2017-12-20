@@ -66,7 +66,8 @@ class PlayerViewController: UIViewController {
         
         if AudioPlayer.isPlaying == true
         {
-            sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "icons8-play_filled"), for: .normal)
+           pauseTimer()
         
           AudioPlayer.stop()
           
@@ -74,8 +75,9 @@ class PlayerViewController: UIViewController {
         }
         else
         {
-            sender.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
             AudioPlayer.play()
+            runTimer()
         }
     }
     @IBOutlet weak var playOrPauseButton: UIButton!
@@ -98,8 +100,8 @@ class PlayerViewController: UIViewController {
             self.AudioPlayer = try AVAudioPlayer(contentsOf: url)
             
             DispatchQueue.main.async {
-                self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-                self.duration.text = ""+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
+                self.playOrPauseButton.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
+                self.duration.text = "0"+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
                 
             }
             
@@ -128,20 +130,26 @@ class PlayerViewController: UIViewController {
         }
     }
     
-    func resetTimer(){
-        
+    func pauseTimer(){
         timer.invalidate()
-        
-        
     }
+    
+    func resetTimer(){
+        timer.invalidate()
+        seconds = 0
+        progressBar.progress = 0
+        runTimer()
+    }
+    
+    
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
     @objc func updateTimer() {
         seconds += 1     //This will incrementthe seconds.
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
-        let progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
+         var progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
         progressBar.progress += progressPercent * 17
        
     }
@@ -163,9 +171,6 @@ func timeString(time:TimeInterval) -> String {
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
         resetTimer()
-        updateTimer()
-        runTimer()
-        
         if index != 0{
            index = index - 1
         }
@@ -194,11 +199,6 @@ func timeString(time:TimeInterval) -> String {
     
     @IBAction func buttonRightPressed(_ sender: Any) {
         resetTimer()
-        updateTimer()
-        runTimer()
-       
-        
-        
         index = (index + 1) % songs.count
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
@@ -226,15 +226,11 @@ func timeString(time:TimeInterval) -> String {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
-        runTimer()
-        
-        
-
-        
-        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
+        setStatusBarBackgroundColor(color: UIColor.black)
+//            UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        
+        runTimer()
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         songTitle.text = songs[index].title
         songArtist.text = songs[index].author
