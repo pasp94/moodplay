@@ -136,7 +136,8 @@ class PlayerViewController: UIViewController {
     
     func resetTimer(){
         timer.invalidate()
-        currentTime.text = "00:00"
+        seconds = 0
+        progressBar.progress = 0
         runTimer()
     }
     
@@ -169,7 +170,6 @@ func timeString(time:TimeInterval) -> String {
     }
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
-   
         resetTimer()
         if index != 0{
            index = index - 1
@@ -198,10 +198,7 @@ func timeString(time:TimeInterval) -> String {
     }
     
     @IBAction func buttonRightPressed(_ sender: Any) {
-        
-       resetTimer()
-        
-        
+        resetTimer()
         index = (index + 1) % songs.count
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
@@ -230,16 +227,9 @@ func timeString(time:TimeInterval) -> String {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
-        runTimer()
-        
-        if currentTime.text == duration.text{
-            
-        }
-
-        
-        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        
+        runTimer()
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         songTitle.text = songs[index].title
         songArtist.text = songs[index].author
