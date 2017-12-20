@@ -10,9 +10,15 @@ import UIKit
 
 class AddToMoodlistTableViewController: UITableViewController {
 
+    var song: Song!
+    var moodlists = [Moodlist]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,18 +39,54 @@ class AddToMoodlistTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return moodlists.count+1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        var cell = UITableViewCell()
+        
+        if indexPath.row == 0{
+            cell = tableView.dequeueReusableCell(withIdentifier: "createPlaylist", for: indexPath)
+            
+            // Configure the cell...
+            
+            let label = cell.viewWithTag(2) as! UILabel
+            label.text = "Create Playlist"
+            let cellImage = cell.viewWithTag(1) as! UIImageView
+            cellImage.image = #imageLiteral(resourceName: "Add Detail")
+            self.tableView.rowHeight = 70
 
-        // Configure the cell...
-
+            
+        }
+        else
+        {
+            cell = tableView.dequeueReusableCell(withIdentifier: "data", for: indexPath)
+            let label = cell.viewWithTag(4) as! UILabel
+            let cellImage = cell.viewWithTag(3) as! UIImageView
+            label.text = moodlists[indexPath.row-1].title
+            cellImage.image = moodlists[indexPath.row-1].image
+            self.tableView.rowHeight = 70
+        }
+        
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let nextVC = segue.destination as? CreatePlaylistViewController{
+            
+            
+            nextVC.song = song
+        }
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

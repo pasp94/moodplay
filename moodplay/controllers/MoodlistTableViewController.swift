@@ -27,6 +27,24 @@ class MoodlistTableViewController: UITableViewController {
             nextVC.songs = songs
             nextVC.index = indexPath!.row
         }
+        
+        if let nextVC = segue.destination as? AddToMoodlistTableViewController{
+            let button = sender as! UIButton
+            
+            let center = button.center
+            
+            self.tableView.indexPathForRow(at: center)
+            
+            let indexPath = self.tableView.indexPathForRow(at: center)
+            
+            
+            nextVC.song = songs[(indexPath?.row)!]
+            
+            
+            //print(prova[0].song.title)
+            nextVC.moodlists = MoodlistDAO.shared.readAllObjects() as! [Moodlist]
+            
+        }
     }
     
     override func viewDidLoad() {

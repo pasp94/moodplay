@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		19B044E21FE883E800579EEF /* MoodlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B044E11FE883E800579EEF /* MoodlistsViewController.swift */; };
-		19B19FBF1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */; };
 		19B19FC11FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */; };
 		19B19FC31FE811770087F863 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B19FC21FE811770087F863 /* Player.storyboard */; };
 		19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC41FE814100087F863 /* PlayerViewController.swift */; };
+		19DE22281FEA9ABC00229731 /* CreatePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE22271FEA9ABC00229731 /* CreatePlaylistViewController.swift */; };
+		19DE222A1FEA9AF600229731 /* AddToMoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE22291FEA9AF500229731 /* AddToMoodlistTableViewController.swift */; };
 		1B0546B61FE9C2830028C241 /* Recognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0546B51FE9C2830028C241 /* Recognizer.swift */; };
 		1B18A6A51FE9CC9D009FADD5 /* RecognizerStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */; };
 		1B18A6A81FE9E042009FADD5 /* WorkInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */; };
@@ -54,10 +55,11 @@
 
 /* Begin PBXFileReference section */
 		19B044E11FE883E800579EEF /* MoodlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodlistsViewController.swift; path = customObjects/MoodlistsViewController.swift; sourceTree = "<group>"; };
-		19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToMoodlistTableViewController.swift; path = moodplay/controllers/AddToMoodlistTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		19B19FC01FE7FF390087F863 /* AddToMoodlistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToMoodlistsTableViewCell.swift; sourceTree = "<group>"; };
 		19B19FC21FE811770087F863 /* Player.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		19B19FC41FE814100087F863 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		19DE22271FEA9ABC00229731 /* CreatePlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaylistViewController.swift; sourceTree = "<group>"; };
+		19DE22291FEA9AF500229731 /* AddToMoodlistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToMoodlistTableViewController.swift; sourceTree = "<group>"; };
 		1B0546B51FE9C2830028C241 /* Recognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognizer.swift; sourceTree = "<group>"; };
 		1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerStarViewController.swift; sourceTree = "<group>"; };
 		1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInformationViewController.swift; sourceTree = "<group>"; };
@@ -210,11 +212,12 @@
 				1B7C9CA11FE585ED00537EAA /* config controller */,
 				1B7C9C9D1FE584AE00537EAA /* MoodlistCollectionViewCell.swift */,
 				1B7107EE1FE40C5D00620D82 /* customObjects */,
-				19B19FBE1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift */,
 				19B044E11FE883E800579EEF /* MoodlistsViewController.swift */,
 				1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */,
 				E70096A91FE329D8009FA0F2 /* MoodlistCollectionViewController.swift */,
 				19B19FC41FE814100087F863 /* PlayerViewController.swift */,
+				19DE22271FEA9ABC00229731 /* CreatePlaylistViewController.swift */,
+				19DE22291FEA9AF500229731 /* AddToMoodlistTableViewController.swift */,
 				1B18A6A61FE9CCAC009FADD5 /* recognizer controllers */,
 			);
 			path = controllers;
@@ -352,14 +355,15 @@
 				1B7C9C991FE5832200537EAA /* FifthViewController.swift in Sources */,
 				4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */,
 				1B7C9C981FE5832200537EAA /* SixthViewController.swift in Sources */,
+				19DE222A1FEA9AF600229731 /* AddToMoodlistTableViewController.swift in Sources */,
 				1B7C9C951FE5832200537EAA /* SecondViewController.swift in Sources */,
 				1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */,
-				19B19FBF1FE7FECE0087F863 /* AddToMoodlistTableViewController.swift in Sources */,
 				E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */,
 				1B7C9C961FE5832200537EAA /* EighthViewController.swift in Sources */,
 				1B0546B61FE9C2830028C241 /* Recognizer.swift in Sources */,
 				1B7EF8DF1FDEF64F006A12D4 /* AppDelegate.swift in Sources */,
 				1B7C9C9E1FE584AF00537EAA /* MoodlistCollectionViewCell.swift in Sources */,
+				19DE22281FEA9ABC00229731 /* CreatePlaylistViewController.swift in Sources */,
 				42A888001FE9D1440013F679 /* MoodlistDAO.swift in Sources */,
 				1B7C9C941FE5832200537EAA /* NinethViewController.swift in Sources */,
 				19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */,
