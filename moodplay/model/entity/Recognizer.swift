@@ -10,6 +10,7 @@ import Foundation
 import HealthKit
 
 let SECOND_TO_HR = 3600
+let DAY_MILLISECOND = Double(60 * 60 * 24)
 
 class Recognizer {
     
@@ -38,28 +39,50 @@ class Recognizer {
         }
     }
     
-    func calculetSleepHours() -> Int {
+    
+    func calculetSleepHours() -> Double {
         
-        var asleepTime = 0
+        
+        var asleepTime : Double = 0
+    
+//        let calendar = NSCalendar.current
+//        let now = NSDate()
+//        var components = calendar.component(Calendar.Component.year, from: now as Date)
+//        components
+//
+//        let startDate = calendar.dateFromComponents(components)
+//
+//        let endDate = calendar.dateByAddingUnit(.Day, value: 1, toDate: startDate, options: [])
+//
+//
+//        let intervalQuery = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        
         
         let sleptHours = HKCategoryType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)
         
-        let sleptHoursSampleQuery = HKSampleQuery(sampleType: sleptHours!, predicate: nil, limit: 3, sortDescriptors: nil) {
-            (query, results, error) in
+        let sleptHoursSampleQuery = HKSampleQuery(sampleType: sleptHours!, predicate: nil, limit: (Int(HKObjectQueryNoLimit)), sortDescriptors: nil) {
+            (query, tmpResults, error) in
             
-            if let resultsOfQuery = results as? [HKCategorySample] {
-                for item in resultsOfQuery{
-                    if item.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
-                    asleepTime =  Int(item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
-                    }
+            if let results = tmpResults as? [HKCategorySample] {
+                for item in results{
+                    asleepTime = (item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
+//                    if let sample = item as? HKCategorySample {
+//                        let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
+//                        print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
+//
+//                    }
+//                    if item.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
+//
+//                        asleepTime = (item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
+//
                 }
-                print(asleepTime)
+                print(abs(asleepTime))
             }
         }
             
         self.healtStore.execute(sleptHoursSampleQuery)
         
-        return asleepTime
+        return abs(asleepTime)
     }
     
     
