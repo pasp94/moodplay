@@ -8,7 +8,7 @@
 
 import UIKit
 
-let MAX_WORK_HOURS = 12
+let MAX_WORK_HOURS = 14
 
 class WorkInformationViewController: UIViewController {
     
@@ -29,9 +29,9 @@ class WorkInformationViewController: UIViewController {
     
     @IBAction func addToCounter(_ sender: UIButton) {
         self.counter += 1
-        self.counterHoursLabel.text = String(self.counter)
-        
-        if self.counter == MAX_WORK_HOURS {
+        if self.counter < MAX_WORK_HOURS {
+            self.counterHoursLabel.text = String(self.counter)
+        } else {
             self.counter = -1
         }
     }
@@ -39,7 +39,5 @@ class WorkInformationViewController: UIViewController {
     @IBAction func updateWorkHours(_ sender: UIButton) {
         Recognizer.shared.workHR = self.counter
         self.performSegue(withIdentifier: "showHealtCalculatorView", sender: self)
-        let variabile = Recognizer.shared.calculetSleepHours()
-        print(variabile)
     }
 }

@@ -52,6 +52,9 @@ class DataEvaluationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Calculate bpm
+        Recognizer.shared.bpmRate = Int(arc4random_uniform(120) + 40)
+        
         //Cardio Appearing
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(showCardioIcon), userInfo: nil, repeats: false)
         
@@ -65,23 +68,9 @@ class DataEvaluationViewController: UIViewController {
         
        
 //
+        Recognizer.shared.recognizeMood()
+        
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(segue), userInfo: nil, repeats: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

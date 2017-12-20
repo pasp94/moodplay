@@ -17,12 +17,18 @@ class Recognizer {
     static public let shared = Recognizer()
     
     public var bpmRate : Int = 0
-    public var sportFlag : Bool = false
+//    public var sportFlag : Bool = false
     public var workHR : Int = 0
-    public var workSatisFlag : Bool = false
-    public var sleepHR : Int = 0
-    public var weatherFlag : Bool = false
+//    public var workSatisFlag : Bool = false
+//    public var sleepHR : Int = 0
+//    public var weatherFlag : Bool = false
+    
+    public var sadPercentage : Int = 0
+    public var happyPercentage : Int = 0
+    public var motivatedPercentage : Int = 0
+    
     public var healtStore = HKHealthStore()
+    
     
     private init(){ }
     
@@ -232,28 +238,28 @@ class Recognizer {
         var happyValue = 0
         var motivatedValue = 0
         
-        if (sleepHR >= 0 && sleepHR < 5) {
+        if (sleepHRValue >= 0 && sleepHRValue < 5) {
             sadValue = 8
             happyValue = 2
             
-        } else if (sleepHR == 5 || sleepHR == 6) {
+        } else if (sleepHRValue == 5 || sleepHRValue == 6) {
             sadValue = 4
             happyValue = 6
             
-        } else if (sleepHR > 6 && sleepHR < 8) {
+        } else if (sleepHRValue > 6 && sleepHRValue < 8) {
             happyValue = 8
             motivatedValue = 2
             
-        } else if (sleepHR == 8 || sleepHR == 9) {
+        } else if (sleepHRValue == 8 || sleepHRValue == 9) {
             motivatedValue = 5
             happyValue = 5
             
-        } else if (sleepHR > 9 && sleepHR <= 11) {
+        } else if (sleepHRValue > 9 && sleepHRValue <= 11) {
             motivatedValue = 6
             happyValue = 3
             sadValue = 1
             
-        } else if (sleepHR > 11) {
+        } else if (sleepHRValue > 11) {
             sadValue = 10
             
             
@@ -316,10 +322,10 @@ class Recognizer {
     func recognizeMood() {
         
         //Setto le variabili per il calcolo finale
-        var bpmMoodValue = evaluateBPM(sportFlag: sportFlag, bpmRate: bpmRate)
-        var workMoodValue = evaluateWorkHR(workSatisFlag: workSatisFlag, workHRValue: workHR)
-        var sleepMoodValue = evaluateSleepHR(sleepHRValue: sleepHR)
-        var weatherMoodValue = evaluateWeather(weatherFlag: weatherFlag)
+        var bpmMoodValue = evaluateBPM(sportFlag: User.shared.musicFlag, bpmRate: bpmRate)
+        var workMoodValue = evaluateWorkHR(workSatisFlag: User.shared.workSatisfactionFlag, workHRValue: self.workHR)
+        var sleepMoodValue = evaluateSleepHR(sleepHRValue: Int(self.calculetSleepHours()))
+        var weatherMoodValue = evaluateWeather(weatherFlag: User.shared.weatherFlag)
         
         //Moltiplico per la priorità che ogni valore ha sul riconoscimento
         
@@ -348,7 +354,8 @@ class Recognizer {
             finalMoodValue[index] = Double(moodValue[index])
         }
         print("\(finalMoodValue[0]) % SAD - \(finalMoodValue[1]) % HAPPY - \(finalMoodValue[2]) % MOTIVATED")
-        
-        //return [finalMoodValue[0], finalMoodValue[1], finalMoodValue[2]]
+        self.sadPercentage = Int(finalMoodValue[0])
+        self.happyPercentage = Int(finalMoodValue[1])
+        self.motivatedPercentage = Int(finalMoodValue[2])
     }
 }
