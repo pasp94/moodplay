@@ -9,6 +9,8 @@
 import Foundation
 import HealthKit
 
+let SECOND_TO_HR = 3600
+
 class Recognizer {
     
     static public let shared = Recognizer()
@@ -34,6 +36,30 @@ class Recognizer {
                 //Disable from Recognizer Sleep information
             }
         }
+    }
+    
+    func calculetSleepHours() -> Int {
+        
+        var asleepTime = 0
+        
+        let sleptHours = HKCategoryType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)
+        
+        let sleptHoursSampleQuery = HKSampleQuery(sampleType: sleptHours!, predicate: nil, limit: 3, sortDescriptors: nil) {
+            (query, results, error) in
+            
+            if let resultsOfQuery = results as? [HKCategorySample] {
+                for item in resultsOfQuery{
+                    if item.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
+                    asleepTime =  Int(item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
+                    }
+                }
+                print(asleepTime)
+            }
+        }
+            
+        self.healtStore.execute(sleptHoursSampleQuery)
+        
+        return asleepTime
     }
     
     
