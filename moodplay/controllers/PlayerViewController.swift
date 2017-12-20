@@ -67,6 +67,7 @@ class PlayerViewController: UIViewController {
         if AudioPlayer.isPlaying == true
         {
             sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+           pauseTimer()
         
           AudioPlayer.stop()
           
@@ -76,6 +77,7 @@ class PlayerViewController: UIViewController {
         {
             sender.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
             AudioPlayer.play()
+            runTimer()
         }
     }
     @IBOutlet weak var playOrPauseButton: UIButton!
@@ -99,7 +101,7 @@ class PlayerViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-                self.duration.text = ""+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
+                self.duration.text = "0"+String((self.AudioPlayer.duration/100)).replacingOccurrences(of: ".", with: ":")[...3]
                 
             }
             
@@ -128,20 +130,25 @@ class PlayerViewController: UIViewController {
         }
     }
     
-    func resetTimer(){
-        
+    func pauseTimer(){
         timer.invalidate()
-        
-        
     }
+    
+    func resetTimer(){
+        timer.invalidate()
+        currentTime.text = "00:00"
+        runTimer()
+    }
+    
+    
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(PlayerViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
     @objc func updateTimer() {
         seconds += 1     //This will incrementthe seconds.
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
-        let progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
+         var progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
         progressBar.progress += progressPercent * 17
        
     }
@@ -162,10 +169,8 @@ func timeString(time:TimeInterval) -> String {
     }
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
+   
         resetTimer()
-        updateTimer()
-        runTimer()
-        
         if index != 0{
            index = index - 1
         }
@@ -193,10 +198,8 @@ func timeString(time:TimeInterval) -> String {
     }
     
     @IBAction func buttonRightPressed(_ sender: Any) {
-        resetTimer()
-        updateTimer()
-        runTimer()
-       
+        
+       resetTimer()
         
         
         index = (index + 1) % songs.count
@@ -229,7 +232,9 @@ func timeString(time:TimeInterval) -> String {
         setStatusBarBackgroundColor(color: UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
         runTimer()
         
-        
+        if currentTime.text == duration.text{
+            
+        }
 
         
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
