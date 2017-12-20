@@ -10,6 +10,12 @@ import UIKit
 
 class RecognizerStarViewController: UIViewController {
 
+    //Icon Outlets
+    @IBOutlet weak var cardioIcon: UIImageView!
+    @IBOutlet weak var calendarIcon: UIImageView!
+    @IBOutlet weak var weatherIcon: UIImageView!
+    
+    
     @IBOutlet weak var startRecognitionButton: UIButton!
     @IBOutlet weak var startingMessageLabel: UILabel!
     
