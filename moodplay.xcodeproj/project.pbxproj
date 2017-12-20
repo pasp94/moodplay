@@ -14,6 +14,7 @@
 		19B19FC51FE814100087F863 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B19FC41FE814100087F863 /* PlayerViewController.swift */; };
 		1B0546B61FE9C2830028C241 /* Recognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0546B51FE9C2830028C241 /* Recognizer.swift */; };
 		1B18A6A51FE9CC9D009FADD5 /* RecognizerStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */; };
+		1B18A6A81FE9E042009FADD5 /* WorkInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */; };
 		1B7107ED1FE4076900620D82 /* MoodlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */; };
 		1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */; };
 		1B7107F21FE40CEB00620D82 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		19B19FC41FE814100087F863 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		1B0546B51FE9C2830028C241 /* Recognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognizer.swift; sourceTree = "<group>"; };
 		1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerStarViewController.swift; sourceTree = "<group>"; };
+		1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInformationViewController.swift; sourceTree = "<group>"; };
 		1B7107EC1FE4076900620D82 /* MoodlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlistTableViewController.swift; sourceTree = "<group>"; };
 		1B7107EF1FE40CC100620D82 /* PlayShuffleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShuffleViewCell.swift; sourceTree = "<group>"; };
 		1B7107F11FE40CEB00620D82 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1B18A6A41FE9CC9D009FADD5 /* RecognizerStarViewController.swift */,
+				1B18A6A71FE9E042009FADD5 /* WorkInformationViewController.swift */,
 			);
 			path = "recognizer controllers";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				1B18A6A51FE9CC9D009FADD5 /* RecognizerStarViewController.swift in Sources */,
 				1B7C9C9A1FE5832200537EAA /* FourthViewController.swift in Sources */,
 				19B044E21FE883E800579EEF /* MoodlistsViewController.swift in Sources */,
+				1B18A6A81FE9E042009FADD5 /* WorkInformationViewController.swift in Sources */,
 				4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */,
 				1B7107F01FE40CC100620D82 /* PlayShuffleViewCell.swift in Sources */,
 				E70096AA1FE329D8009FA0F2 /* MoodlistCollectionViewController.swift in Sources */,

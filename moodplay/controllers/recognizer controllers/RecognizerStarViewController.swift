@@ -16,6 +16,8 @@ class RecognizerStarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Recognizer"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.startingMessageLabel.text = "Hi \(User.shared.name)! How do You feel now?"
     }
     
