@@ -44,6 +44,7 @@
 		4295A79C1FE4027D00ED832E /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7951FE4027C00ED832E /* UserDAO.swift */; };
 		4295A79E1FE4027D00ED832E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7971FE4027C00ED832E /* DAO.swift */; };
 		42A888001FE9D1440013F679 /* MoodlistDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A887FF1FE9D1440013F679 /* MoodlistDAO.swift */; };
+		4D2182D81FEA676B003ED768 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2182D71FEA676B003ED768 /* AVKit.framework */; };
 		E70096A01FE2D00F009FA0F2 /* Moodlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700969F1FE2D00F009FA0F2 /* Moodlist.swift */; };
 		E70096A41FE3282F009FA0F2 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A31FE3282F009FA0F2 /* Song.swift */; };
 		E70096A61FE328A5009FA0F2 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70096A51FE328A5009FA0F2 /* Mood.swift */; };
@@ -92,6 +93,7 @@
 		4295A7951FE4027C00ED832E /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		4295A7971FE4027C00ED832E /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		42A887FF1FE9D1440013F679 /* MoodlistDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodlistDAO.swift; sourceTree = "<group>"; };
+		4D2182D71FEA676B003ED768 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		E700969F1FE2D00F009FA0F2 /* Moodlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moodlist.swift; sourceTree = "<group>"; };
 		E70096A31FE3282F009FA0F2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E70096A51FE328A5009FA0F2 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2182D81FEA676B003ED768 /* AVKit.framework in Frameworks */,
 				1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +184,7 @@
 		1B7EF8F51FDF350A006A12D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D2182D71FEA676B003ED768 /* AVKit.framework */,
 				1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */,
 			);
 			name = Frameworks;
