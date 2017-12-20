@@ -65,12 +65,10 @@ class EighthViewController: UIViewController {
         Player.seek(to: kCMTimeZero)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func allowUsageHKInfo(_ sender: UIButton) {
+        //Ask to User for the permission to share with this application sleep information
+        Recognizer.shared.allowToShareSleepAnalysis()
     }
-    
-    
 }
 
 

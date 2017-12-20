@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HealthKit
 
 class Recognizer {
     
@@ -18,8 +19,23 @@ class Recognizer {
     public var workSatisFlag : Bool = false
     public var sleepHR : Int = 0
     public var weatherFlag : Bool = false
+    public var healtStore = HKHealthStore()
     
     private init(){ }
+    
+    func allowToShareSleepAnalysis(){
+        let argumentsToRead : Set<HKObjectType> = [HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!]
+        
+        self.healtStore.requestAuthorization(toShare: nil, read: argumentsToRead){
+            (success, error) -> Void in
+            
+            if success == false {
+                //In this part an allert appear
+                //Disable from Recognizer Sleep information
+            }
+        }
+    }
+    
     
     func evaluateBPM(sportFlag: Bool, bpmRate: Int) -> [Int] {
         
