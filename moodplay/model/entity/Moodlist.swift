@@ -12,24 +12,29 @@ import UIKit
 class Moodlist {
     
     //Attributes
-    public let id : Int
+    public let id: String
     public var title : String
+    public var description: String
     public var songs : [Song]                  //reference to class Song
-    public var mood : Mood
+    public var image: UIImage
+    //public var mood : Mood
     
-    public var color: RGBColor
+    //public var color: RGBColor
     
     //Inits
-    init (id: Int, title: String, songs: [Song], mood: Mood) {
+    init (id: String, title: String, description: String, songs: [Song],image: UIImage) {
         
         self.id = id
         self.title = title
+        self.description = description
         self.songs = songs
-        self.mood = mood
-        self.color = mood.color
+        self.image = image
+        //self.mood = mood
+        //self.color = mood.color
         
     }
     
     //Methods
     
 }
+

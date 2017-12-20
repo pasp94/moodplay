@@ -23,8 +23,8 @@ class User {
     public var workSatisfactionFlag : Bool = false
     public var weatherFlag : Bool = false
     public var musicFlag : Bool = false
-    
     public var bpmRate : Int = 0
+    public var profileImage: UIImage = #imageLiteral(resourceName: "default_profile_image")
     //  public var bpmRateWatch : da Implementare
     
     //Inits

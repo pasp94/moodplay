@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CloudKit
 
 class UserDAO: ProtocolDAO{
@@ -18,6 +19,21 @@ class UserDAO: ProtocolDAO{
     let database = CKContainer.default().privateCloudDatabase
     static let shared = UserDAO()
     private init (){}
+    
+    func writeImage(image: UIImage) -> URL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent(NSUUID().uuidString + ".png")
+        if let imageData = UIImagePNGRepresentation(image) {
+            do{
+                try imageData.write(to: fileURL)
+                
+            }catch{
+                print(error)
+            }
+        }
+        
+        return fileURL as URL
+    }
     
     
     func writeObjectToCloud(object: AnyObject) {
@@ -35,6 +51,9 @@ class UserDAO: ProtocolDAO{
         record.setValue(user.weatherFlag, forKey: "weatherFlag")
         record.setValue(user.musicFlag, forKey: "musicFlag")
         record.setValue(user.bpmRate, forKey: "bpmRate")
+        
+        record.setValue(CKAsset(fileURL: writeImage(image: user.profileImage)), forKey: "profileImage")
+    
         
         database.save(record, completionHandler:{
             
@@ -74,6 +93,24 @@ class UserDAO: ProtocolDAO{
                 User.shared.weatherFlag = record!["weatherFlag"] as! Bool
                 User.shared.musicFlag = record!["musicFlag"] as! Bool
                 User.shared.bpmRate = record!["bpmRate"] as! Int
+                
+                let asset = record!["profileImage"] as? CKAsset
+                
+                var image = UIImage()
+                if let file = asset{
+                    do{
+                        image = UIImage(data: try Data(contentsOf: file.fileURL))!
+                        
+                        User.shared.profileImage = image
+                        
+                    }
+                    catch{
+                        print(error)
+                    }
+                    
+                }
+                
+                
                 
                 data = User.shared
                 
@@ -129,7 +166,7 @@ class UserDAO: ProtocolDAO{
             self.dispatchGroup.enter()
             let user = object as! User
             
-            let record = CKRecord(recordType: "MoodplayUser", recordID: CKRecordID(recordName: "user_data"))
+            let record = CKRecord(recordType: "MoodPlayUser", recordID: CKRecordID(recordName: "user_data"))
             record.setValue(user.name, forKey: "name")
             record.setValue(user.surname, forKey: "surname")
             record.setValue(user.age, forKey: "age")
@@ -140,6 +177,8 @@ class UserDAO: ProtocolDAO{
             record.setValue(user.weatherFlag, forKey: "weatherFlag")
             record.setValue(user.musicFlag, forKey: "musicFlag")
             record.setValue(user.bpmRate, forKey: "bpmRate")
+            
+            record.setValue(CKAsset(fileURL: writeImage(image: user.profileImage)), forKey: "profileImage")
             
             database.save(record, completionHandler:{
                 
