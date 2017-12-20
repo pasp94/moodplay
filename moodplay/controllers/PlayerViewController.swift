@@ -180,9 +180,9 @@ func timeString(time:TimeInterval) -> String {
         }
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         currentTime.text = ""
         var data = Data()
         do{
@@ -202,9 +202,9 @@ func timeString(time:TimeInterval) -> String {
         index = (index + 1) % songs.count
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         currentTime.text = ""
     
         var data = Data()
@@ -232,9 +232,9 @@ func timeString(time:TimeInterval) -> String {
         runTimer()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
