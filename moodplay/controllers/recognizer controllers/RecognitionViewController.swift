@@ -12,6 +12,14 @@ class RecognitionViewController: UIViewController {
 
     @IBOutlet weak var reconizedMoodLabel: UILabel!
     
+    //Mood Percentages
+    @IBOutlet weak var sadMoodPercentage: UILabel!
+    @IBOutlet weak var happyMoodPercentage: UILabel!
+    @IBOutlet weak var motivatedMoodPercentage: UILabel!
+    
+    
+    @IBOutlet weak var leaveMoodButton: UIButton!
+    @IBOutlet weak var changeMoodButton: UIButton!
     
     
     override func viewDidLoad() {

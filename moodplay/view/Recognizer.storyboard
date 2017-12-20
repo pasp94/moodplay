@@ -315,7 +315,12 @@ You could burst!</string>
                         <viewLayoutGuide key="safeArea" id="6R0-ux-qTt"/>
                     </view>
                     <connections>
+                        <outlet property="changeMoodButton" destination="W4c-F9-eqX" id="Pva-nE-SC0"/>
+                        <outlet property="happyMoodPercentage" destination="z8C-43-NZ4" id="Xxb-8E-j7l"/>
+                        <outlet property="leaveMoodButton" destination="5DG-Y1-OeS" id="Ud2-ap-w1E"/>
+                        <outlet property="motivatedMoodPercentage" destination="New-NH-GnU" id="ybT-WN-HXM"/>
                         <outlet property="reconizedMoodLabel" destination="7CR-B6-mHO" id="Ev0-Lo-yCv"/>
+                        <outlet property="sadMoodPercentage" destination="ZOS-uV-Zur" id="BFw-ln-x5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cco-DD-UDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
