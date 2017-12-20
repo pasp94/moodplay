@@ -76,6 +76,26 @@ class AddToMoodlistTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if indexPath.row > 0{
+            let currentMoodlist = moodlists[indexPath.row-1]
+            var present = false
+            for s in currentMoodlist.songs{
+                if s.spotifyLink == song.spotifyLink
+                {
+                    //print("presente")
+                    present = true
+                }
+            }
+            if present == false
+            {
+                //print("not present")
+                currentMoodlist.songs.append(song)
+                MoodlistDAO.shared.updateRecord(id: currentMoodlist.id, object: currentMoodlist)
+                navigationController?.popViewController(animated: true)
+            }
+            
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,6 +106,8 @@ class AddToMoodlistTableViewController: UITableViewController {
             nextVC.song = song
         }
     }
+    
+    
 
 
     /*

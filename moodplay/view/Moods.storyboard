@@ -126,7 +126,7 @@
                                             <state key="normal" title="Button" image="Add Detail"/>
                                             <connections>
                                                 <action selector="addToMyMoodlist:" destination="519-4c-3jm" eventType="touchUpInside" id="R9I-MS-CyI"/>
-                                                <segue destination="sp8-VU-QXE" kind="show" id="AGf-YA-nVX"/>
+                                                <segue destination="sp8-VU-QXE" kind="show" id="xJG-U7-SUD"/>
                                             </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iwx-fM-unk">

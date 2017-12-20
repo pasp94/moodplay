@@ -52,9 +52,9 @@ class PlayerViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
-    @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var songArtist: UILabel!
-    @IBOutlet weak var songAlbum: UILabel!
+    @IBOutlet weak var songTitle: MarqueeLabel!
+    @IBOutlet weak var songArtist: MarqueeLabel!
+    @IBOutlet weak var songAlbum: MarqueeLabel!
     @IBOutlet weak var songAlbumImage: UIImageView!
     
     
@@ -180,9 +180,9 @@ func timeString(time:TimeInterval) -> String {
         }
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         currentTime.text = ""
         var data = Data()
         do{
@@ -202,9 +202,9 @@ func timeString(time:TimeInterval) -> String {
         index = (index + 1) % songs.count
         AudioPlayer.stop()
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         currentTime.text = ""
     
         var data = Data()
@@ -232,9 +232,9 @@ func timeString(time:TimeInterval) -> String {
         runTimer()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
-        songTitle.text = songs[index].title
-        songArtist.text = songs[index].author
-        songAlbum.text = songs[index].album
+        songTitle.text = " " + songs[index].title
+        songArtist.text = " " + songs[index].author
+        songAlbum.text = " " + songs[index].album
         var data = Data()
         do{
             data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
@@ -244,6 +244,21 @@ func timeString(time:TimeInterval) -> String {
         }
         let urlBackground = Bundle.main.url(forResource: "gradient", withExtension: "mov")
         
+        songTitle.tag = 101
+        songTitle.type = .continuous
+        songTitle.animationCurve = .easeInOut
+        
+        songArtist.tag = 101
+        songArtist.type = .continuous
+        songArtist.animationCurve = .easeInOut
+        
+        songAlbum.tag = 101
+        songAlbum.type = .continuous
+        songAlbum.animationCurve = .easeInOut
+        // Text string, fade length, leading buffer, trailing buffer, and scroll
+        // duration for this label are set via Interface Builder's Attributes Inspector!
+        
+        // Do any additional setup after loading the view, typically from a nib.
         
         
         Player = AVPlayer.init(url: urlBackground!)
