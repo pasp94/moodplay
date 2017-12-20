@@ -21,18 +21,8 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         moods = MoodDAO.shared.readAllObjects() as! [Mood]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 
     
@@ -67,18 +57,15 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoodlistCollectionViewCell
     
         
-        // Configure the cell
-        let index = indexPath.item
-        
-        //cell.backgroundColor = UIColor.blue commentato da Pasquale Pelliccia
+        //cell.backgroundColor = UIColor.blue commentato da Pasquale Pelliccia (o cazz - commentato da Matteo Russo)
         cell.backgroundColor = UIColor(red: CGFloat(moods[indexPath.row].color.r), green: CGFloat(moods[indexPath.row].color.g), blue: CGFloat(moods[indexPath.row].color.b), alpha: 1.0)
-        // cell.backgroundColor = UIColor(red: mood.color.r, green:mood.color.g, blue:mood.color.b, alpha:1.0)
+        cell.moodImage.image = UIImage(named: "\(moods[indexPath.row].name)")
+        
+        
         cell.layer.cornerRadius = 5
-        // cell.titleLabel.text = moodlist.title
-        //cell.titleLabel.text = "Titolo" commentato da Pasquale Pelliccia
         cell.titleLabel.text = moods[indexPath.row].name
-        cell.titleLabel.textColor = UIColor.black
-
+        cell.titleLabel.textColor = UIColor.white
+        cell.titleLabel.layer.opacity = 0.65
         
         
         return cell

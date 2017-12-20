@@ -39,6 +39,10 @@ class MoodlistsViewController: UIViewController, UINavigationControllerDelegate,
         myImageView.layer.cornerRadius = myImageView.frame.size.width/2
         myImageView.clipsToBounds = true
         
+        
+        self.navigationItem.title = "My Profile"
+    self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         // Do any additional setup after loading the view.
     }
     

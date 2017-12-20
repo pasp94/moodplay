@@ -19,26 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-72-CAY">
-                                <rect key="frame" x="147" y="34" width="80" height="80"/>
+                                <rect key="frame" x="148" y="162" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-Sf-baH">
+                                <rect key="frame" x="0.0" y="270" width="375" height="233"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <segue destination="Lwe-uX-Lj2" kind="embed" id="akj-ox-LSb"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-Rh-yMo">
-                                <rect key="frame" x="235" y="84" width="98" height="30"/>
+                                <rect key="frame" x="240" y="158" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <state key="normal" title="Change Photo"/>
                                 <connections>
                                     <action selector="importImage:" destination="Y1q-Ld-hQ4" eventType="touchUpInside" id="O2p-5e-Ouf"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-Sf-baH">
-                                <rect key="frame" x="0.0" y="217" width="375" height="233"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Lwe-uX-Lj2" kind="embed" id="akj-ox-LSb"/>
-                                </connections>
-                            </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="4Gh-tj-OHa"/>
                     </view>
                     <navigationItem key="navigationItem" id="Flz-qJ-HEw"/>

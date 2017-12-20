@@ -10,6 +10,7 @@ import UIKit
 
 class MoodlistCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var moodImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     var moodlist : Moodlist? {

@@ -22,7 +22,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dyE-5a-OvU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZTg-52-x8e">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,17 +37,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-ja-o4F">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usJ-20-A2G">
-                                            <rect key="frame" x="0.0" y="128" width="166" height="37"/>
+                                            <rect key="frame" x="14" y="143" width="166" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="34"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <size key="customSize" width="180" height="180"/>
                                 <connections>
+                                    <outlet property="moodImage" destination="Kxq-ja-o4F" id="Bl2-jr-dJb"/>
                                     <outlet property="titleLabel" destination="usJ-20-A2G" id="pgi-Ko-b2v"/>
                                 </connections>
                             </collectionViewCell>
@@ -71,7 +77,6 @@
         <!--Songs-->
         <scene sceneID="0Ys-RD-Y5m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzd-ub-Bsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Songs" id="ukm-Ky-w2g" customClass="MoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hEs-5E-s2U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -169,21 +174,21 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzd-ub-Bsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136.8000000000002" y="-146.17691154422789"/>
         </scene>
         <!--Player-->
         <scene sceneID="BhE-6Y-ERI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmi-bH-jX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Player" id="X6e-OZ-zrv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmi-bH-jX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2821" y="-605"/>
         </scene>
         <!--Add to Moodlist-->
         <scene sceneID="1fe-hN-fVs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-DY-NqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Add to Moodlist" id="sp8-VU-QXE" customClass="AddToMoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="We9-XG-pqP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -252,13 +257,13 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-DY-NqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3120.8000000000002" y="-146.17691154422789"/>
         </scene>
         <!--Create Playlist-->
         <scene sceneID="Pd3-t6-Poq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ws-DT-0nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Create Playlist" id="8qm-9d-RhR" customClass="CreatePlaylistViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EN-8L-9ln">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -322,6 +327,7 @@
                         <outlet property="playlistName" destination="CVN-pi-Kk4" id="3nG-9K-MD0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ws-DT-0nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3925.5999999999999" y="-150.67466266866569"/>
         </scene>
