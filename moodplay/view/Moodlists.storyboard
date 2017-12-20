@@ -491,7 +491,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add Detail" width="44" height="44"/>
+        <image name="Add Detail" width="22" height="22"/>
         <image name="default_profile_image" width="1280" height="1280"/>
         <image name="moodlists_icon" width="29" height="29"/>
         <image name="playlist-default" width="416" height="260"/>
