@@ -32,12 +32,15 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-Rh-yMo">
                                 <rect key="frame" x="240" y="158" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" title="Change Photo"/>
+                                <state key="normal" title="Change Photo">
+                                    <color key="titleColor" red="1" green="0.69946861230000001" blue="0.24990552369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="importImage:" destination="Y1q-Ld-hQ4" eventType="touchUpInside" id="O2p-5e-Ouf"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4Gh-tj-OHa"/>
                     </view>
                     <navigationItem key="navigationItem" id="Flz-qJ-HEw"/>
