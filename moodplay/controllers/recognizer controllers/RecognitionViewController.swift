@@ -10,6 +10,10 @@ import UIKit
 
 class RecognitionViewController: UIViewController {
 
+    @IBOutlet weak var reconizedMoodLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

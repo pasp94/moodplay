@@ -224,7 +224,7 @@ You could burst!</string>
                         <outlet property="weatherIconEval" destination="jeS-Ap-oCH" id="74n-vK-JRY"/>
                         <outlet property="weatherSubtitle" destination="avI-HA-b26" id="2mD-n9-Fjw"/>
                         <outlet property="weatherTitle" destination="Krl-q9-AbB" id="sWm-l3-YRk"/>
-                        <segue destination="s1I-F8-XUy" kind="show" id="mH8-OW-obW"/>
+                        <segue destination="s1I-F8-XUy" kind="show" identifier="finalRecognition" id="mH8-OW-obW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmf-I4-wX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,6 +314,9 @@ You could burst!</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6R0-ux-qTt"/>
                     </view>
+                    <connections>
+                        <outlet property="reconizedMoodLabel" destination="7CR-B6-mHO" id="Ev0-Lo-yCv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cco-DD-UDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

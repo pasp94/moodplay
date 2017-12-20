@@ -25,6 +25,10 @@ class DataEvaluationViewController: UIViewController {
     @IBOutlet weak var calendarSubtitle: UILabel!
     @IBOutlet weak var weatherSubtitle: UILabel!
     
+    @objc func segue(){
+        self.performSegue(withIdentifier: "finalRecognition", sender: self)
+    }
+    
     //Appearing Functions
     var timer = Timer()
     @objc func showCardioIcon(){
@@ -57,6 +61,11 @@ class DataEvaluationViewController: UIViewController {
         //Weather Appearing
          Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(showWeatherIcon), userInfo: nil, repeats: false)
         
+//        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(prepare(for:sender:)), userInfo: nil, repeats: false)
+        
+       
+//
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(segue), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
