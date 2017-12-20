@@ -77,7 +77,6 @@ class AddToMoodlistTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row > 0{
-            print("ajaja")
             let currentMoodlist = moodlists[indexPath.row-1]
             var present = false
             for s in currentMoodlist.songs{
@@ -92,6 +91,7 @@ class AddToMoodlistTableViewController: UITableViewController {
                 //print("not present")
                 currentMoodlist.songs.append(song)
                 MoodlistDAO.shared.updateRecord(id: currentMoodlist.id, object: currentMoodlist)
+                navigationController?.popViewController(animated: true)
             }
             
         }
