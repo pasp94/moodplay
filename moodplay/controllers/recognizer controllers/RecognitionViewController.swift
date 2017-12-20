@@ -27,6 +27,9 @@ class RecognitionViewController: UIViewController {
         self.sadMoodPercentage.text = String("\(Recognizer.shared.sadPercentage)%")
         self.happyMoodPercentage.text = String("\(Recognizer.shared.happyPercentage)%")
         self.motivatedMoodPercentage.text = String("\(Recognizer.shared.motivatedPercentage)%")
+        
+        changeMoodButton.layer.cornerRadius = 8
+        changeMoodButton.backgroundColor = UIColor.orange
     }
 
 }
