@@ -53,7 +53,7 @@
         <scene sceneID="gdd-ir-ZNq">
             <objects>
                 <viewControllerPlaceholder storyboardName="Moodlists" id="que-dT-4Ke" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZHe-ry-5Gg"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" id="ZHe-ry-5Gg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWi-Eb-dSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
