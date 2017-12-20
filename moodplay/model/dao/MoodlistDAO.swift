@@ -157,6 +157,7 @@ class MoodlistDAO: ProtocolDAO{
             songRecord.setValue(songRecord.recordID.recordName, forKey: "id")
             songRecord.setValue(moodlist.title, forKey: "title")
             songRecord.setValue(moodlist.description, forKey: "description")
+            songRecord.setValue(CKAsset(fileURL: writeImage(image: moodlist.image)), forKey: "image")
             var songIds = [String]()
             for song in moodlist.songs{
                 
