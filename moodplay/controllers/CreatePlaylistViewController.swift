@@ -29,7 +29,7 @@ class CreatePlaylistViewController: UIViewController, UINavigationControllerDele
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             myImageView.image = image
         }else{
-            //Error message
+            print("Error")
         }
         self.dismiss(animated: true, completion: nil)
     }
