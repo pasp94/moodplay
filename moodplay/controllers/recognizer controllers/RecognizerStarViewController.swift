@@ -17,6 +17,8 @@ class RecognizerStarViewController: UIViewController {
     
     
     @IBOutlet weak var startRecognitionButton: UIButton!
+    
+    
     @IBOutlet weak var startingMessageLabel: UILabel!
     
     override func viewDidLoad() {

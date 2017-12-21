@@ -26,7 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54c-zl-uiS">
                                 <rect key="frame" x="62" y="492" width="251" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Recognizing" backgroundImage="StartRecognitionBtn"/>
+                                <state key="normal" title="Start Recognizing"/>
                                 <connections>
                                     <action selector="startToRecognize:" destination="o4W-4K-5f5" eventType="touchUpInside" id="KSR-Jo-aPg"/>
                                     <segue destination="caZ-kK-prr" kind="show" id="AaX-gM-lca"/>
@@ -109,7 +109,7 @@ You could burst!</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPX-5T-edy">
                                 <rect key="frame" x="112" y="551" width="150" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next" backgroundImage="StartRecognitionBtn">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -148,6 +148,7 @@ You could burst!</string>
                         <outlet property="attentionMessageLabel" destination="Ddp-FV-ZTb" id="oTu-zf-NrX"/>
                         <outlet property="bottomGuidingLabel" destination="etC-6V-JG2" id="BAS-72-Dxv"/>
                         <outlet property="counterHoursLabel" destination="L8M-IB-vQe" id="uJO-4N-prO"/>
+                        <outlet property="nextButton" destination="OPX-5T-edy" id="DrG-0k-S7n"/>
                         <outlet property="questionLabel" destination="1hF-vy-QSx" id="dh8-Nx-dN9"/>
                         <outlet property="topGuidingLabel" destination="0ri-pN-XCw" id="Zzd-1u-Rk0"/>
                         <segue destination="4Nq-nJ-301" kind="show" identifier="showHealtCalculatorView" id="JiA-ms-lhO"/>
@@ -256,7 +257,7 @@ You could burst!</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Reconized Mood is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpK-BD-KRv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Recognized Mood is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpK-BD-KRv">
                                 <rect key="frame" x="16" y="84" width="343" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>

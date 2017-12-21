@@ -20,8 +20,12 @@ class WorkInformationViewController: UIViewController {
     
     var counter : Int = 0
     
+    @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.layer.cornerRadius = 8
+    
+        nextButton.backgroundColor = UIColor.orange
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         self.counterHoursLabel.text = String(self.counter)
