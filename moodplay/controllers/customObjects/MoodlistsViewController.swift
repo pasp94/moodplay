@@ -11,6 +11,7 @@ import UIKit
 class MoodlistsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     @IBAction func importImage(_ sender: Any) {
         let image = UIImagePickerController()
@@ -38,7 +39,7 @@ class MoodlistsViewController: UIViewController, UINavigationControllerDelegate,
         //Radius Image
         myImageView.layer.cornerRadius = myImageView.frame.size.width/2
         myImageView.clipsToBounds = true
-        
+        self.userNameLabel.text = ("\(User.shared.name)")
         
         self.navigationItem.title = "My Profile"
     self.navigationController?.navigationBar.prefersLargeTitles = true
