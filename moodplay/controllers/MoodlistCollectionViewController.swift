@@ -88,7 +88,6 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
         cell.titleLabel.textColor = UIColor.white
         cell.titleLabel.layer.opacity = 0.65
         
-        
         return cell
     }
     
