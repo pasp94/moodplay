@@ -134,7 +134,6 @@ You could burst!</string>
                                 <rect key="frame" x="112" y="226" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.69946861230000001" blue="0.24990552369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="addToCounter:" destination="caZ-kK-prr" eventType="touchUpInside" id="yAe-jt-2ZO"/>
                                 </connections>
