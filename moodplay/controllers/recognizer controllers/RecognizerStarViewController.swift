@@ -24,6 +24,9 @@ class RecognizerStarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startRecognitionButton.layer.cornerRadius = 8
+        
+        startRecognitionButton.backgroundColor = UIColor.orange
         UserDAO.shared.readObjectFromCloud(id: "user_data")
         
         self.navigationItem.title = "Recognizer"
