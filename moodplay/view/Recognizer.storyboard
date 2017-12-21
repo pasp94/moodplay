@@ -130,8 +130,8 @@ You could burst!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6o-PS-FV7">
-                                <rect key="frame" x="112" y="178" width="150" height="211"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6o-PS-FV7">
+                                <rect key="frame" x="112" y="226" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.69946861230000001" blue="0.24990552369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -148,6 +148,7 @@ You could burst!</string>
                         <outlet property="attentionMessageLabel" destination="Ddp-FV-ZTb" id="oTu-zf-NrX"/>
                         <outlet property="bottomGuidingLabel" destination="etC-6V-JG2" id="BAS-72-Dxv"/>
                         <outlet property="counterHoursLabel" destination="L8M-IB-vQe" id="uJO-4N-prO"/>
+                        <outlet property="increaseButton" destination="B6o-PS-FV7" id="aVO-vw-pd8"/>
                         <outlet property="nextButton" destination="OPX-5T-edy" id="DrG-0k-S7n"/>
                         <outlet property="questionLabel" destination="1hF-vy-QSx" id="dh8-Nx-dN9"/>
                         <outlet property="topGuidingLabel" destination="0ri-pN-XCw" id="Zzd-1u-Rk0"/>

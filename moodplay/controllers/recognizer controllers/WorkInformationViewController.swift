@@ -17,6 +17,7 @@ class WorkInformationViewController: UIViewController {
     @IBOutlet weak var counterHoursLabel: UILabel!
     @IBOutlet weak var attentionMessageLabel: UILabel!
     @IBOutlet weak var bottomGuidingLabel: UILabel!
+    @IBOutlet weak var increaseButton: UIButton!
     
     var counter : Int = 0
     
@@ -25,6 +26,15 @@ class WorkInformationViewController: UIViewController {
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 8
     
+        
+        if (self.counter == 0 || self.counter == 1 || self.counter == 2 ) {
+           
+            increaseButton.setImage(UIImage(named: "green_face"), for: UIControlState.normal)
+            
+        } else {
+            increaseButton.setImage(UIImage(named: "orange_face"), for: UIControlState.normal)
+        }
+        
         nextButton.backgroundColor = UIColor.orange
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
@@ -33,6 +43,7 @@ class WorkInformationViewController: UIViewController {
     
     @IBAction func addToCounter(_ sender: UIButton) {
         self.counter += 1
+        
         if self.counter < MAX_WORK_HOURS {
             self.counterHoursLabel.text = String(self.counter)
         } else {
