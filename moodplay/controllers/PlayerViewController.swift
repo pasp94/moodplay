@@ -149,8 +149,11 @@ class PlayerViewController: UIViewController {
     @objc func updateTimer() {
         seconds += 1     //This will incrementthe seconds.
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
-         var progressPercent = Float(progressBar.frame.width) / Float(songs[index].duration_ms)
-        progressBar.progress += progressPercent * 17
+         let progressPercent = Float(progressBar.frame.width) / 30000
+        progressBar.progress += progressPercent * 3
+        if progressBar.progress == 1{
+            pauseTimer()
+        }
        
     }
     
