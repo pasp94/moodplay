@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-Sf-baH">
-                                <rect key="frame" x="0.0" y="270" width="375" height="233"/>
+                                <rect key="frame" x="0.0" y="270" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <connections>
                                     <segue destination="Lwe-uX-Lj2" kind="embed" id="akj-ox-LSb"/>
@@ -58,13 +58,10 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Lwe-uX-Lj2" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gbO-tW-wGt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection id="bor-5y-AyY">
-                                <cells/>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Profilo" id="hyR-9V-guu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="CDv-6t-wVC" style="IBUITableViewCellStyleDefault" id="ccI-tc-oPy">
@@ -106,7 +103,7 @@
             <objects>
                 <tableViewController id="nrX-xU-Lib" customClass="UserProfileMoodlistsTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wBO-JT-DKm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -159,7 +156,7 @@
             <objects>
                 <tableViewController title="Songs" id="ud4-zb-96J" customClass="MoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aln-Wg-DmJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -281,7 +278,7 @@
             <objects>
                 <tableViewController title="Add to Moodlist" id="CLI-rJ-3oe" customClass="AddToMoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KEB-6N-81N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
