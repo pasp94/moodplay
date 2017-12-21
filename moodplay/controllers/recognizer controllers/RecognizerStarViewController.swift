@@ -17,10 +17,15 @@ class RecognizerStarViewController: UIViewController {
     
     
     @IBOutlet weak var startRecognitionButton: UIButton!
+    
+    
     @IBOutlet weak var startingMessageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startRecognitionButton.layer.cornerRadius = 8
+        startRecognitionButton.backgroundColor = UIColor.orange
         
         self.navigationItem.title = "Recognizer"
     self.navigationController?.navigationBar.prefersLargeTitles = true
