@@ -49,9 +49,9 @@ class RecognitionViewController: UIViewController {
             nextVC.recognizer = true
             nextVC.recognizedMood = reconizedMoodLabel.text!.lowercased()
             nextVC.changeMyMood = changeMyMood
-            
-            
         }
     }
+    
+    
 
 }
