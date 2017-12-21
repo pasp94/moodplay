@@ -358,4 +358,17 @@ class Recognizer {
         self.happyPercentage = Int(finalMoodValue[1])
         self.motivatedPercentage = Int(finalMoodValue[2])
     }
+    
+    
+    func retriverDominantMood() -> Mood {
+        let percentages = [self.sadPercentage, self.happyPercentage, self.motivatedPercentage]
+        let moods = ["sad", "happy", "motivate"]
+        let indexMax = percentages.index(of: percentages.max()!)
+        
+        let realMood = MoodDAO.shared.readObjectFromCloud(id: moods[indexMax!]) as! Mood
+        
+        return realMood
+    }
+    
+    
 }

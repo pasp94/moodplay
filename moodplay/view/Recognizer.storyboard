@@ -264,17 +264,13 @@ You could burst!</string>
                                 <color key="textColor" red="0.9805480647" green="0.9805480647" blue="0.9805480647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CR-B6-mHO">
-                                <rect key="frame" x="107" y="138" width="160" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <color key="textColor" red="0.15994220972061157" green="0.37717944383621216" blue="0.61968696117401123" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DG-Y1-OeS">
                                 <rect key="frame" x="111" y="463" width="152" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Leave me in my Mood"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Leave me in my Mood">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="leaveMood:" destination="s1I-F8-XUy" eventType="touchUpInside" id="Ug8-rw-XXC"/>
                                     <segue destination="EML-eD-yoU" kind="show" id="suh-dn-cHf"/>
@@ -315,18 +311,27 @@ You could burst!</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrr-1f-aHH">
                                 <rect key="frame" x="39" y="221" width="78" height="78"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="sad_icon"/>
+                                <connections>
+                                    <action selector="pressSadEmoji:" destination="s1I-F8-XUy" eventType="touchUpInside" id="EEm-Vn-d9F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-ta-0wJ">
                                 <rect key="frame" x="148" y="221" width="78" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="happy_icon"/>
+                                <connections>
+                                    <action selector="pressHappyEmoji:" destination="s1I-F8-XUy" eventType="touchUpInside" id="v0j-qW-jQx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9s-aZ-LHT">
                                 <rect key="frame" x="263" y="221" width="78" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="motivated_icon"/>
+                                <connections>
+                                    <action selector="pressMotevatedEmoji:" destination="s1I-F8-XUy" eventType="touchUpInside" id="REK-S1-rO1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-43-NZ4">
                                 <rect key="frame" x="148" y="301" width="78" height="45"/>
@@ -342,6 +347,13 @@ You could burst!</string>
                                 <color key="textColor" red="0.15978831052780151" green="0.3732391893863678" blue="0.61576586961746216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CR-B6-mHO">
+                                <rect key="frame" x="16" y="133" width="343" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.15994220972061157" green="0.37717944383621216" blue="0.61968696117401123" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6R0-ux-qTt"/>
@@ -351,7 +363,7 @@ You could burst!</string>
                         <outlet property="happyMoodPercentage" destination="z8C-43-NZ4" id="Xxb-8E-j7l"/>
                         <outlet property="leaveMoodButton" destination="5DG-Y1-OeS" id="Ud2-ap-w1E"/>
                         <outlet property="motivatedMoodPercentage" destination="New-NH-GnU" id="ybT-WN-HXM"/>
-                        <outlet property="reconizedMoodLabel" destination="7CR-B6-mHO" id="Ev0-Lo-yCv"/>
+                        <outlet property="recognizedMoodLabel" destination="7CR-B6-mHO" id="g11-Xg-Av9"/>
                         <outlet property="sadMoodPercentage" destination="ZOS-uV-Zur" id="BFw-ln-x5t"/>
                     </connections>
                 </viewController>
@@ -710,9 +722,8 @@ You could burst!</string>
         <image name="002-calendar-daily-page-on-day-31" width="45" height="48"/>
         <image name="003-gymnast-control-of-heart-beats" width="48" height="45"/>
         <image name="Add Detail" width="22" height="22"/>
-        <image name="CalendarIcon" width="68" height="72"/>
-        <image name="HearthKit" width="72" height="67"/>
-        <image name="StartRecognitionBtn" width="197" height="49"/>
+        <image name="CalendarIcon" width="34" height="36"/>
+        <image name="HearthKit" width="36" height="33"/>
         <image name="WeatherIcon" width="36" height="30"/>
         <image name="happy_icon" width="72" height="72"/>
         <image name="motivated_icon" width="72" height="72"/>
