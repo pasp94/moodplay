@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Moodlists-->
         <scene sceneID="Udl-dV-Cyq">
@@ -19,26 +24,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-72-CAY">
-                                <rect key="frame" x="148" y="162" width="80" height="80"/>
+                                <rect key="frame" x="115" y="143" width="145" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-Sf-baH">
-                                <rect key="frame" x="0.0" y="270" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="369" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <connections>
                                     <segue destination="Lwe-uX-Lj2" kind="embed" id="akj-ox-LSb"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-Rh-yMo">
-                                <rect key="frame" x="240" y="158" width="98" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-Rh-yMo">
+                                <rect key="frame" x="230" y="143" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" title="Change Photo">
+                                <state key="normal" image="photoIcon">
                                     <color key="titleColor" red="1" green="0.69946861230000001" blue="0.24990552369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="importImage:" destination="Y1q-Ld-hQ4" eventType="touchUpInside" id="O2p-5e-Ouf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRd-9z-Yz2">
+                                <rect key="frame" x="53" y="302" width="269" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4Gh-tj-OHa"/>
@@ -47,6 +59,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myImageView" destination="2h3-72-CAY" id="ngI-UW-e94"/>
+                        <outlet property="userNameLabel" destination="GRd-9z-Yz2" id="sts-WZ-tkf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsP-xx-fyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,6 +464,7 @@
         <image name="Add Detail" width="22" height="22"/>
         <image name="default_profile_image" width="1280" height="1280"/>
         <image name="moodlists_icon" width="29" height="29"/>
+        <image name="photoIcon" width="256" height="256"/>
         <image name="playlist-default" width="416" height="260"/>
     </resources>
 </document>
