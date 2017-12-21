@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="1639.2" y="886.50674662668678"/>
         </scene>
-        <!--User Profile Moodlists Table View Controller-->
+        <!--My Moodlists-->
         <scene sceneID="b6T-dW-547">
             <objects>
-                <tableViewController id="nrX-xU-Lib" customClass="UserProfileMoodlistsTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="My Moodlists" id="nrX-xU-Lib" customClass="UserProfileMoodlistsTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wBO-JT-DKm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

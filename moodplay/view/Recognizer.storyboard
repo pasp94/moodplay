@@ -194,7 +194,7 @@ You could burst!</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="002-calendar-daily-page-on-day-31" translatesAutoresizingMaskIntoConstraints="NO" id="a24-k8-sXg">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CalendarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a24-k8-sXg">
                                 <rect key="frame" x="32" y="331" width="64" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -212,14 +212,13 @@ You could burst!</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001-sky" translatesAutoresizingMaskIntoConstraints="NO" id="jeS-Ap-oCH">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WeatherIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jeS-Ap-oCH">
                                 <rect key="frame" x="32" y="462" width="64" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="003-gymnast-control-of-heart-beats" translatesAutoresizingMaskIntoConstraints="NO" id="Yum-vM-v2R">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HearthKit" translatesAutoresizingMaskIntoConstraints="NO" id="Yum-vM-v2R">
                                 <rect key="frame" x="32" y="200" width="64" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Evaluating your data..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-0l-Zkg">
                                 <rect key="frame" x="82" y="98" width="210" height="40"/>
@@ -703,9 +702,6 @@ You could burst!</string>
         </scene>
     </scenes>
     <resources>
-        <image name="001-sky" width="48" height="40"/>
-        <image name="002-calendar-daily-page-on-day-31" width="45" height="48"/>
-        <image name="003-gymnast-control-of-heart-beats" width="48" height="45"/>
         <image name="Add Detail" width="22" height="22"/>
         <image name="CalendarIcon" width="34" height="36"/>
         <image name="HearthKit" width="36" height="33"/>
