@@ -40,6 +40,7 @@
 		1B7EF8F71FDF350A006A12D4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */; };
 		1B7EF8FB1FDFF54D006A12D4 /* Moods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF8FA1FDFF54D006A12D4 /* Moods.storyboard */; };
 		1BBF87AB1FE042E800BACF45 /* Moodlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF87AA1FE042E800BACF45 /* Moodlists.storyboard */; };
+		42132CC51FEF0D8100E82AF2 /* Moodsr.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42132CC41FEF0D8100E82AF2 /* Moodsr.storyboard */; };
 		42354D301FEAC074001FCFA1 /* UserProfileMoodlistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42354D2F1FEAC074001FCFA1 /* UserProfileMoodlistsTableViewController.swift */; };
 		4266A8B51FE6E3DC00512D84 /* MoodDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */; };
 		4267BDE21FEB0053004489EB /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267BDE01FEB0053004489EB /* MarqueeLabel.swift */; };
@@ -96,6 +97,7 @@
 		1B7EF8F61FDF350A006A12D4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1B7EF8FA1FDFF54D006A12D4 /* Moods.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moods.storyboard; sourceTree = "<group>"; };
 		1BBF87AA1FE042E800BACF45 /* Moodlists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodlists.storyboard; sourceTree = "<group>"; };
+		42132CC41FEF0D8100E82AF2 /* Moodsr.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Moodsr.storyboard; sourceTree = "<group>"; };
 		42354D2F1FEAC074001FCFA1 /* UserProfileMoodlistsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMoodlistsTableViewController.swift; sourceTree = "<group>"; };
 		4266A8B41FE6E3DC00512D84 /* MoodDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDAO.swift; sourceTree = "<group>"; };
 		4267BDE01FEB0053004489EB /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				19B19FC21FE811770087F863 /* Player.storyboard */,
 				1BBF87AA1FE042E800BACF45 /* Moodlists.storyboard */,
 				1B7EF8FA1FDFF54D006A12D4 /* Moods.storyboard */,
+				42132CC41FEF0D8100E82AF2 /* Moodsr.storyboard */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				1BBF87AB1FE042E800BACF45 /* Moodlists.storyboard in Resources */,
 				1B7C9C9C1FE5845000537EAA /* Configuration.storyboard in Resources */,
 				1B7C9CA71FE5D50D00537EAA /* Recognizer.storyboard in Resources */,
+				42132CC51FEF0D8100E82AF2 /* Moodsr.storyboard in Resources */,
 				1B7C9CA41FE586B700537EAA /* LaunchScreen.storyboard in Resources */,
 				1B7EF8E61FDEF64F006A12D4 /* Assets.xcassets in Resources */,
 				1B7C9CA01FE585D200537EAA /* gradient.mov in Resources */,
