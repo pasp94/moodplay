@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CloudKit
 
 
@@ -23,6 +24,20 @@ class MoodDAO : DAO, ProtocolDAO {
     let dispatchGroup  = DispatchGroup()
     
     private override init(){}
+    func writeImage(image: UIImage) -> URL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsURL.appendingPathComponent(NSUUID().uuidString + ".png")
+        if let imageData = UIImagePNGRepresentation(image) {
+            do{
+                try imageData.write(to: fileURL)
+                
+            }catch{
+                print(error)
+            }
+        }
+        
+        return fileURL as URL
+    }
     
     func writeObjectToCloud(object: AnyObject) {
         
@@ -30,7 +45,10 @@ class MoodDAO : DAO, ProtocolDAO {
         
         let moodRecord = CKRecord(recordType: "MoodPlayMood", recordID: CKRecordID(recordName: mood.name))
         moodRecord.setValue(mood.name, forKey: "name")
-        moodRecord.setValue([mood.color.r, mood.color.g, mood.color.b], forKey: "color")
+        
+        moodRecord.setValue([String(mood.color.r), String(mood.color.g), String(mood.color.b)], forKey: "color")
+        moodRecord.setValue(CKAsset(fileURL: writeImage(image: mood.image)), forKey: "image")
+        moodRecord.setValue(mood.superMood, forKey: "superMood")
         
         self.database.save(moodRecord, completionHandler: {
             (record, error) in
@@ -58,12 +76,32 @@ class MoodDAO : DAO, ProtocolDAO {
                 guard record != nil else {return}
                 
                 let name = record!["name"] as! String
-                let rgb = record!["color"] as! [Float]
+                let rgb = record!["color"] as! [String]
+                let r = (rgb[0] as NSString).floatValue
+                let g = (rgb[1] as NSString).floatValue
+                let b = (rgb[2] as NSString).floatValue
+                
+                let color = RGBColor(r: r, g: g, b: b)
+                let asset = record!["image"] as? CKAsset
+                
+                var image = UIImage()
+                if let file = asset{
+                    do{
+                        image = UIImage(data: try Data(contentsOf: file.fileURL))!
+                        
+                    }
+                    catch{
+                        print(error)
+                    }
+                    
+                }
+                
+                let superMood = record!["superMood"] as! String
                 
                 
-                let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
                 
-                data = Mood(name: name, color: color)
+                
+                data = Mood(name: name, color: color, image: image, superMood: superMood)
                 
                 self.dispatchGroup.leave()
             }
@@ -115,13 +153,16 @@ class MoodDAO : DAO, ProtocolDAO {
             
             let moodRecord = CKRecord(recordType: "MoodPlayMood", recordID: CKRecordID(recordName: mood.name))
             moodRecord.setValue(mood.name, forKey: "name")
-            moodRecord.setValue([mood.color.r, mood.color.g, mood.color.b], forKey: "color")
+            
+            moodRecord.setValue([String(mood.color.r), String(mood.color.g), String(mood.color.b)] , forKey: "color")
+            moodRecord.setValue(CKAsset(fileURL: writeImage(image: mood.image)), forKey: "image")
+            moodRecord.setValue(mood.superMood, forKey: "superMood")
             
             self.database.save(moodRecord, completionHandler: {
                 (record, error) in
                 
                 if error != nil{
-                    print(error as! String)
+                    print(error)
                     return
                 }
                 
@@ -156,12 +197,33 @@ class MoodDAO : DAO, ProtocolDAO {
                 result, error in
                 
                 
-                for r in result!
+                for res in result!
                 {
-                    let name = r.object(forKey: "name")! as! String
-                    let rgb = r.object(forKey: "color")! as! [Float]
+                    let name = res.object(forKey: "name")! as! String
+                    let rgb = res.object(forKey: "color")! as! [String]
+                    let r = (rgb[0] as NSString).floatValue
+                    let g = (rgb[1] as NSString).floatValue
+                    let b = (rgb[2] as NSString).floatValue
                     
-                    moods.append(Mood(name: name, color: RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])))
+                    let color = RGBColor(r: r, g: g, b: b)
+                    let asset = res.object(forKey: "image")! as? CKAsset
+                    
+                    var image = UIImage()
+                    if let file = asset{
+                        do{
+                            image = UIImage(data: try Data(contentsOf: file.fileURL))!
+                            
+                        }
+                        catch{
+                            print(error)
+                        }
+                        
+                    }
+                    
+                    let superMood = res.object(forKey: "superMood")! as! String
+                    
+                    
+                    moods.append(Mood(name: name, color: RGBColor(r: r, g: g, b: b), image: image, superMood: superMood))
                     
                 }
                 
@@ -194,13 +256,32 @@ class MoodDAO : DAO, ProtocolDAO {
                 result, error in
                 
                 
-                for r in result!
+                for res in result!
                 {
-                    let name = r.object(forKey: "name")! as! String
-                    let rgb = r.object(forKey: "color")! as! [Float]
-                    let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
+                    let name = res.object(forKey: "name")! as! String
+                    let rgb = res.object(forKey: "color")! as! [String]
+                    let r = (rgb[0] as NSString).floatValue
+                    let g = (rgb[1] as NSString).floatValue
+                    let b = (rgb[2] as NSString).floatValue
+                    let color = RGBColor(r: r, g: g, b: b)
+                    let asset = res.object(forKey: "image")! as? CKAsset
                     
-                    moods.append(Mood(name: name, color: color))
+                    var image = UIImage()
+                    if let file = asset{
+                        do{
+                            image = UIImage(data: try Data(contentsOf: file.fileURL))!
+                            
+                        }
+                        catch{
+                            print(error)
+                        }
+                        
+                    }
+                    
+                    let superMood = res.object(forKey: "superMood")! as! String
+                    
+                    moods.append(Mood(name: name, color: color, image: image, superMood: superMood))
+                    
                     
                 }
                 
@@ -232,13 +313,32 @@ class MoodDAO : DAO, ProtocolDAO {
                 result, error in
                 
                 
-                for r in result!
+                for res in result!
                 {
-                    let name = r.object(forKey: "name")! as! String
-                    let rgb = r.object(forKey: "color")! as! [Float]
-                    let color = RGBColor(r: rgb[0], g: rgb[1], b: rgb[2])
+                    let name = res.object(forKey: "name")! as! String
+                    let rgb = res.object(forKey: "color")! as! [String]
+                    let r = (rgb[0] as NSString).floatValue
+                    let g = (rgb[1] as NSString).floatValue
+                    let b = (rgb[2] as NSString).floatValue
+                    let color = RGBColor(r: r, g: g, b: b)
+                    let asset = res.object(forKey: "image")! as? CKAsset
                     
-                    moods.append(Mood(name: name, color: color))
+                    var image = UIImage()
+                    if let file = asset{
+                        do{
+                            image = UIImage(data: try Data(contentsOf: file.fileURL))!
+                            
+                        }
+                        catch{
+                            print(error)
+                        }
+                        
+                    }
+                    
+                    let superMood = res.object(forKey: "superMood")! as! String
+                    
+                    moods.append(Mood(name: name, color: color, image: image, superMood: superMood))
+                    
                     
                 }
                 

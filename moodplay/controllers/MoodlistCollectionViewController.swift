@@ -80,7 +80,9 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
         
         //cell.backgroundColor = UIColor.blue commentato da Pasquale Pelliccia (o cazz - commentato da Matteo Russo)
         cell.backgroundColor = UIColor(red: CGFloat(moods[indexPath.row].color.r), green: CGFloat(moods[indexPath.row].color.g), blue: CGFloat(moods[indexPath.row].color.b), alpha: 1.0)
-        cell.moodImage.image = UIImage(named: "\(moods[indexPath.row].name)") 
+        //cell.moodImage.image = UIImage(named: "\(moods[indexPath.row].name)")
+        
+        cell.moodImage.image = moods[indexPath.row].image
         
         
         cell.layer.cornerRadius = 5

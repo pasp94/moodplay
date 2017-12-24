@@ -17,18 +17,20 @@ struct RGBColor {
     var b : Float
 }
 
-
-
 class Mood {
     
     //Attributes
     let name : String
     var color : RGBColor
+    var image: UIImage
+    var superMood: String
     
     //Inits
-    init(name: String, color: RGBColor ) {
+    init(name: String, color: RGBColor,image: UIImage, superMood: String ) {
         self.name = name
         self.color = color
+        self.image = image
+        self.superMood = superMood
     }
     
     //Methods
