@@ -67,10 +67,13 @@ class DataEvaluationViewController: UIViewController {
 //        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(prepare(for:sender:)), userInfo: nil, repeats: false)
         
        
-//
+//  
         Recognizer.shared.recognizeMood()
         
+        
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(segue), userInfo: nil, repeats: false)
+        
+        
     }
 
 }

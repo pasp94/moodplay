@@ -324,6 +324,7 @@ class Recognizer {
         //Setto le variabili per il calcolo finale
         var bpmMoodValue = evaluateBPM(sportFlag: User.shared.musicFlag, bpmRate: bpmRate)
         var workMoodValue = evaluateWorkHR(workSatisFlag: User.shared.workSatisfactionFlag, workHRValue: self.workHR)
+        
         var sleepMoodValue = evaluateSleepHR(sleepHRValue: Int(self.calculetSleepHours()))
         var weatherMoodValue = evaluateWeather(weatherFlag: User.shared.weatherFlag)
         
@@ -362,7 +363,7 @@ class Recognizer {
     
     func retriverDominantMood() -> Mood {
         let percentages = [self.sadPercentage, self.happyPercentage, self.motivatedPercentage]
-        let moods = ["sad", "happy", "motivate"]
+        let moods = ["sad", "happy", "motivated"]
         let indexMax = percentages.index(of: percentages.max()!)
         
         let realMood = MoodDAO.shared.readObjectFromCloud(id: moods[indexMax!]) as! Mood
