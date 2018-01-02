@@ -144,6 +144,7 @@ class PlayerViewController: UIViewController {
     
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
+        
     }
     
     @objc func updateTimer() {
@@ -151,8 +152,25 @@ class PlayerViewController: UIViewController {
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
          let progressPercent = Float(progressBar.frame.width) / 30000
         progressBar.progress += progressPercent * 3
-        if progressBar.progress == 1{
+        if progressBar.progress == 1{ // play automatically next song
             pauseTimer()
+                resetTimer()
+                index = (index + 1) % songs.count
+                AudioPlayer.stop()
+                downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
+                songTitle.text = " " + songs[index].title
+                songArtist.text = " " + songs[index].author
+                songAlbum.text = " " + songs[index].album
+                currentTime.text = ""
+                
+                var data = Data()
+                do{
+                    data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
+                    songAlbumImage.image = UIImage(data: data)
+                }catch{
+                    print(error)
+                }
+            
         }
        
     }
@@ -229,6 +247,7 @@ func timeString(time:TimeInterval) -> String {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        
         setStatusBarBackgroundColor(color: UIColor.black)
 //            UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
@@ -246,6 +265,8 @@ func timeString(time:TimeInterval) -> String {
             print(error)
         }
         let urlBackground = Bundle.main.url(forResource: "gradient", withExtension: "mov")
+        
+        
         
         songTitle.tag = 101
         songTitle.type = .continuous
