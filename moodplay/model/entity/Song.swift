@@ -18,7 +18,6 @@ class Song
     var album: String
     var mood: String
     var duration_ms: Int
-    var youtubeLink: String
     var spotifyLink: String
     var spotifyPreviewURL: String
     var genres: [String]
@@ -27,12 +26,11 @@ class Song
     
     
     
-    init(author: String, title: String, album: String, mood: String, youtubeLink: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String, artworks: [String]){
+    init(author: String, title: String, album: String, mood: String, spotifyLink: String, duration_ms: Int, genres: [String],spotifyPreviewURL: String, artworks: [String]){
         self.author = author
         self.title = title
         self.album = album
         self.mood = mood
-        self.youtubeLink = youtubeLink
         self.spotifyLink = spotifyLink
         self.duration_ms = duration_ms
         self.genres = genres

@@ -31,7 +31,6 @@ class SongDAO: DAO, ProtocolDAO
         songRecord.setValue(song.album, forKey: "album")
         songRecord.setValue(song.duration_ms, forKey: "duration_ms")
         songRecord.setValue(song.mood, forKey: "mood")
-        songRecord.setValue(song.youtubeLink, forKey: "youtubeLink")
         songRecord.setValue(song.spotifyLink, forKey: "spotifyLink")
         songRecord.setValue(song.genres, forKey: "genres")
         songRecord.setValue(song.spotifyPreviewURL, forKey: "spotifyPreviewURL")
@@ -72,14 +71,13 @@ class SongDAO: DAO, ProtocolDAO
                 let album = record!["album"] as! String
                 let mood = record!["mood"] as! String
                 let duration_ms = record!["duration_ms"] as! Int
-                let youtubeLink = record!["youtubeLink"] as! String
                 let spotifyLink = record!["spotifyLink"] as! String
                 let genres = record!["genres"] as! [String]
                 let spotifyPreviewURL = record!["spotifyPreviewURL"] as! String
                 let artworks = record!["artworks"] as! [String]
                 
                 
-                data = Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artworks: artworks)
+                data = Song(author: author, title: title, album: album, mood: mood, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artworks: artworks)
                 
                 //MySingleton.shared.finished = true
                 self.dispatchGroup.leave()
@@ -116,14 +114,13 @@ class SongDAO: DAO, ProtocolDAO
                     let title = r.object(forKey: "title")! as! String
                     let album = r.object(forKey: "album")! as! String
                     let mood = r.object(forKey: "mood")! as! String
-                    let youtubeLink = r.object(forKey: "youtubeLink")! as! String
                     let spotifyLink = r.object(forKey: "spotifyLink")! as! String
                     let duration_ms = r.object(forKey: "duration_ms")! as! Int
                     let genres = r.object(forKey: "genres")! as! [String]
                     let spotifyPreviewURL = r.object(forKey: "spotifyPreviewURL")! as! String
                     let artworks = r.object(forKey: "artworks")! as! [String]
                     
-                    songs.append(Song(author: author, title: title, album: album, mood: mood, youtubeLink: youtubeLink, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artworks: artworks))
+                    songs.append(Song(author: author, title: title, album: album, mood: mood, spotifyLink: spotifyLink, duration_ms: duration_ms, genres: genres, spotifyPreviewURL: spotifyPreviewURL, artworks: artworks))
                     
                 }
                 
@@ -185,7 +182,6 @@ class SongDAO: DAO, ProtocolDAO
             songRecord.setValue(song.album, forKey: "album")
             songRecord.setValue(song.duration_ms, forKey: "duration_ms")
             songRecord.setValue(song.mood, forKey: "mood")
-            songRecord.setValue(song.youtubeLink, forKey: "youtubeLink")
             songRecord.setValue(song.spotifyLink, forKey: "spotifyLink")
             songRecord.setValue(song.genres, forKey: "genres")
             songRecord.setValue(song.spotifyPreviewURL, forKey: "spotifyPreviewURL")
