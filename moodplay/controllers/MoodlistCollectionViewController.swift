@@ -28,17 +28,17 @@ class MoodlistCollectionViewController: UICollectionViewController, UICollection
         if recognizer
         {
             if changeMyMood {
-                moods = MoodDAO.shared.fetchObjects(field: "name", notEqualTo: recognizedMood) as! [Mood]
+                moods = MoodDAO.shared.fetchObjects(field: "superMood", notEqualTo: recognizedMood) as! [Mood]
             }
             else
             {
-                moods = MoodDAO.shared.fetchObjects(field: "name", equalTo: recognizedMood) as! [Mood]
+                moods = MoodDAO.shared.fetchObjects(field: "superMood", equalTo: recognizedMood) as! [Mood]
                 
             }
         }
         else
         {
-            moods = MoodDAO.shared.readAllObjects() as! [Mood]
+            moods = MoodDAO.shared.fetchAllSubMoods() as! [Mood]
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
