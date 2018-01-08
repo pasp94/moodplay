@@ -31,7 +31,7 @@ class RecognizerStarViewController: UIViewController {
         
         self.navigationItem.title = "Recognizer"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.startingMessageLabel.text = "Hi \(User.shared.name)! How do You feel now?"
+        self.startingMessageLabel.text = "Hi \(User.shared.name)!\n Want to recognize your mood?"
         
         /*let chill = Mood(name: "chill", color: RGBColor(r: 0.99, g: 0.65, b: 1.0), image: #imageLiteral(resourceName: "Chill"), superMood: "chill")
         
