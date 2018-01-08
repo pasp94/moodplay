@@ -152,26 +152,26 @@ class PlayerViewController: UIViewController {
         currentTime.text = timeString(time: TimeInterval(seconds)) //This will update the label.
          let progressPercent = Float(progressBar.frame.width) / 30000
         progressBar.progress += progressPercent * 3
-        pauseTimer()        
-//        if progressBar.progress == 1{ // play automatically next song
-//                resetTimer()
-//                index = (index + 1) % songs.count
-//                AudioPlayer.stop()
-//                downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
-//                songTitle.text = " " + songs[index].title
-//                songArtist.text = " " + songs[index].author
-//                songAlbum.text = " " + songs[index].album
-//                currentTime.text = ""
-//
-//                var data = Data()
-//                do{
-//                    data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
-//                    songAlbumImage.image = UIImage(data: data)
-//                }catch{
-//                    print(error)
-//                }
-//
-//        }
+        if progressBar.progress == 1{ // play automatically next song
+            pauseTimer()
+                resetTimer()
+                index = (index + 1) % songs.count
+                AudioPlayer.stop()
+                downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
+                songTitle.text = " " + songs[index].title
+                songArtist.text = " " + songs[index].author
+                songAlbum.text = " " + songs[index].album
+                currentTime.text = ""
+                
+                var data = Data()
+                do{
+                    data = try Data(contentsOf: URL(string: songs[index].artworks[0])!)
+                    songAlbumImage.image = UIImage(data: data)
+                }catch{
+                    print(error)
+                }
+            
+        }
        
     }
     
