@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EoI-MJ-ROF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +20,7 @@
             <objects>
                 <collectionViewController title="Moods" id="EoI-MJ-ROF" customClass="MoodlistCollectionViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dyE-5a-OvU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZTg-52-x8e">
@@ -75,7 +79,7 @@
             <objects>
                 <tableViewController title="Songs" id="ukm-Ky-w2g" customClass="MoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hEs-5E-s2U">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +99,8 @@
                                             </state>
                                             <connections>
                                                 <action selector="playMoodlist:" destination="oFS-MQ-UWh" eventType="touchUpInside" id="mK3-7i-OWA"/>
+                                                <action selector="riproduci:" destination="ukm-Ky-w2g" eventType="touchDown" id="dI2-NG-hUM"/>
+                                                <segue destination="X6e-OZ-zrv" kind="show" id="m9c-gL-RJ9"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhG-w3-AN4">
@@ -105,6 +111,8 @@
                                             </state>
                                             <connections>
                                                 <action selector="randomizePlay:" destination="oFS-MQ-UWh" eventType="touchUpInside" id="ueV-0C-xuC"/>
+                                                <action selector="shuffle:" destination="ukm-Ky-w2g" eventType="touchDown" id="6kg-EI-z9i"/>
+                                                <segue destination="X6e-OZ-zrv" kind="show" id="dsT-eZ-niK"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -194,7 +202,7 @@
             <objects>
                 <tableViewController title="Add to Moodlist" id="sp8-VU-QXE" customClass="AddToMoodlistTableViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="We9-XG-pqP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -272,7 +280,7 @@
             <objects>
                 <viewController title="Create Playlist" id="8qm-9d-RhR" customClass="CreatePlaylistViewController" customModule="moodplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EN-8L-9ln">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVN-pi-Kk4">
@@ -344,4 +352,7 @@
         <image name="Add Detail" width="22" height="22"/>
         <image name="playlist-default" width="416" height="260"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0JC-JC-sQu"/>
+    </inferredMetricsTieBreakers>
 </document>

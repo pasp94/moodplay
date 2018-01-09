@@ -45,7 +45,8 @@ class PlayerViewController: UIViewController {
     var index = 0
     var flag = 1
     var timerIsOn = false
-
+    var riproduci = false
+    var shuffle = false
     
     
     @IBOutlet weak var duration: UILabel!
@@ -177,7 +178,15 @@ class PlayerViewController: UIViewController {
     @objc func autoPlay() {
         if currentTime.text == duration.text{ // play automatically next song
             resetTimer()
-            index = (index + 1) % songs.count
+            if self.shuffle
+            {
+                index = Int(UInt32(arc4random_uniform(UInt32(songs.count))))
+            }
+            else
+            {
+                index = (index + 1) % songs.count
+            }
+            
             AudioPlayer.stop()
             downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
             songTitle.text = " " + songs[index].title
@@ -255,6 +264,8 @@ func timeString(time:TimeInterval) -> String {
     
     override func viewWillDisappear(_ animated: Bool) {
         AudioPlayer.stop()
+        self.shuffle = false
+        self.riproduci = false
         self.navigationController?.isNavigationBarHidden = false
     }
     

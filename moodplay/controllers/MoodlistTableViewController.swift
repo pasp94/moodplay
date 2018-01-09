@@ -16,16 +16,46 @@ class MoodlistTableViewController: UITableViewController {
     
     var songs = [Song]()
     
+    var riproduci = false
+    var shuffle = false
     //Download URL and play
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.riproduci = false
+        self.shuffle = false
+    }
+    
+    @IBAction func riproduci(_ sender: Any) {
+        self.riproduci = true
+    }
+    
+    @IBAction func shuffle(_ sender: Any) {
+        self.shuffle = true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Qui passiamo la tableview al player
         if let nextVC = segue.destination as? PlayerViewController{
-            let cell = sender as! SongTableViewCell
-            let indexPath = self.tableView?.indexPath(for: cell)
+            
             nextVC.songs = songs
-            nextVC.index = indexPath!.row - 1
+            nextVC.riproduci = self.riproduci
+            nextVC.shuffle = self.shuffle
+            
+            if self.riproduci{
+                
+                nextVC.index = 0
+            }
+            else if self.shuffle{
+                nextVC.index = Int(UInt32(arc4random_uniform(UInt32(songs.count))))
+                
+            }
+            else
+            {
+                let cell = sender as! SongTableViewCell
+                let indexPath = self.tableView?.indexPath(for: cell)
+                nextVC.index = indexPath!.row - 1
+            }
+            
             
         }
         
