@@ -126,8 +126,11 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
+        
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
+            AudioPlayer.stop()
+            stopTimer()
         }
     }
     
@@ -140,6 +143,13 @@ class PlayerViewController: UIViewController {
         seconds = 0
         progressBar.progress = 0
         runTimer()
+    }
+    
+    func stopTimer(){
+        timer.invalidate()
+        seconds = 0
+        progressBar.progress = 0
+        
     }
     
     
@@ -184,13 +194,6 @@ class PlayerViewController: UIViewController {
             }
             
         }
-    }
-    
-    func back(sender: UIBarButtonItem) {
-        // Perform your custom actions
-        // ...
-        // Go back to the previous ViewController
-        AudioPlayer.stop()
     }
     
 
@@ -263,7 +266,7 @@ func timeString(time:TimeInterval) -> String {
 //            UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0))
         downloadFileFromURL(url: URL(string: songs[index].spotifyPreviewURL)! )
         runTimer()
-//        runAutoPlay()
+        runAutoPlay()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "icons8-pause_filled"), for: .normal)
         //playOrPauseButton.setImage(#imageLiteral(resourceName: "pause_push"), for: .normal)
         songTitle.text = " " + songs[index].title
