@@ -43,10 +43,10 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userProfileMoodlistsCell", for: indexPath)
 
         // Configure the cell...
-        var imageView = cell.viewWithTag(1) as! UIImageView
+        let imageView = cell.viewWithTag(1) as! UIImageView
         imageView.image = moodlists[indexPath.row].image
         
-        var label = cell.viewWithTag(2) as! UILabel
+        let label = cell.viewWithTag(2) as! UILabel
         label.text = moodlists[indexPath.row].title
         self.tableView.rowHeight = 70
         
@@ -58,7 +58,7 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView?.indexPath(for: cell)
             
-            var songs = moodlists[(indexPath?.row)!].songs
+            let songs = moodlists[(indexPath?.row)!].songs
             print(songs.count)
             nextVC.songs = songs
             

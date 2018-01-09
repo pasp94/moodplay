@@ -162,7 +162,7 @@ class MoodDAO : DAO, ProtocolDAO {
                 (record, error) in
                 
                 if error != nil{
-                    print(error)
+                    print(error!)
                     return
                 }
                 
@@ -223,7 +223,7 @@ class MoodDAO : DAO, ProtocolDAO {
                     let superMood = res.object(forKey: "superMood")! as! String
                     
                     
-                    moods.append(Mood(name: name, color: RGBColor(r: r, g: g, b: b), image: image, superMood: superMood))
+                    moods.append(Mood(name: name, color: color, image: image, superMood: superMood))
                     
                 }
                 
