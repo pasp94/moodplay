@@ -64,7 +64,9 @@ class MoodlistDAO: ProtocolDAO{
             
             guard record != nil else {return}
             
-            print("saved record")
+            //print("saved record")
+            
+            
         }
     }
     
@@ -142,7 +144,7 @@ class MoodlistDAO: ProtocolDAO{
                     print(error!)
                     return
                 }
-                print("record deleted successfully")
+                //print("record deleted successfully")
                 
                 self.dispatchGroup.leave()
             })
@@ -176,7 +178,7 @@ class MoodlistDAO: ProtocolDAO{
                 
                 guard record != nil else {return}
                 
-                print("saved record")
+                //print("saved record")
                 self.dispatchGroup.leave()
             }
             self.dispatchGroup.wait()
@@ -200,7 +202,7 @@ class MoodlistDAO: ProtocolDAO{
                 print(error!)
                 return
             }
-            print("record deleted successfully")
+            //print("record deleted successfully")
             
             
         })

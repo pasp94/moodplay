@@ -10,7 +10,8 @@ import UIKit
 
 class UserProfileMoodlistsTableViewController: UITableViewController {
 
-    var moodlists = MoodlistDAO.shared.readAllObjects() as! [Moodlist]
+    var moodlists: [Moodlist]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,14 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+
+    override func viewWillAppear(_ animated: Bool) {
+        sleep(1)
+        moodlists = MoodlistDAO.shared.readAllObjects() as? [Moodlist]
+        tableView.reloadData()
+        
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,7 +44,8 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return moodlists.count
+        return moodlists!.count
+       
     }
 
     
@@ -44,10 +54,10 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
 
         // Configure the cell...
         let imageView = cell.viewWithTag(1) as! UIImageView
-        imageView.image = moodlists[indexPath.row].image
+        imageView.image = moodlists![indexPath.row].image
         
         let label = cell.viewWithTag(2) as! UILabel
-        label.text = moodlists[indexPath.row].title
+        label.text = moodlists![indexPath.row].title
         self.tableView.rowHeight = 70
         
         return cell
@@ -58,7 +68,7 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView?.indexPath(for: cell)
             
-            let songs = moodlists[(indexPath?.row)!].songs
+            let songs = moodlists![(indexPath?.row)!].songs
             print(songs.count)
             nextVC.songs = songs
             
@@ -80,8 +90,8 @@ class UserProfileMoodlistsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            MoodlistDAO.shared.deleteRecord(id: moodlists[indexPath.row].id)
-            moodlists.remove(at: indexPath.row)
+            MoodlistDAO.shared.deleteRecord(id: moodlists![indexPath.row].id)
+            moodlists!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             
