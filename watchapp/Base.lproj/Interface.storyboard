@@ -12,10 +12,10 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchapp" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchapp_Extension">
                     <items>
-                        <imageView alignment="center" id="7Pr-1c-NMm"/>
-                        <label alignment="left" text="Label" id="CdY-w7-aJU"/>
+                        <imageView alignment="center" contentMode="scaleAspectFit" id="7Pr-1c-NMm"/>
+                        <label alignment="center" text="Label" id="CdY-w7-aJU"/>
                         <button width="1" alignment="left" title="Start" id="Y8u-cf-Ueo">
                             <connections>
                                 <segue destination="7vF-XM-8GZ" kind="push" id="ckH-oK-Oqc"/>
@@ -61,11 +61,11 @@
                 <controller identifier="DataEvaluation" id="gQF-iH-fna" customClass="EvaluatingDataInterfaceController" customModule="watchapp_Extension">
                     <items>
                         <label alignment="center" text="Evaluating Data ..." id="DL0-XO-Rm8"/>
-                        <imageView alignment="center" image="heart_icon" id="huY-Ho-fRD"/>
+                        <imageView width="54" height="50" alignment="center" image="heart_icon" contentMode="scaleAspectFit" id="huY-Ho-fRD"/>
                         <group width="1" alignment="left" id="uNI-bC-3vW">
                             <items>
-                                <imageView width="56" alignment="left" image="sky_icon" id="DNQ-El-erZ"/>
-                                <imageView width="56" alignment="right" image="calendar_icon" id="GYS-5i-w1o"/>
+                                <imageView width="56" alignment="left" image="sky_icon" contentMode="scaleAspectFit" id="DNQ-El-erZ"/>
+                                <imageView width="56" alignment="right" image="calendar_icon" contentMode="scaleAspectFit" id="GYS-5i-w1o"/>
                             </items>
                         </group>
                     </items>
@@ -76,7 +76,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="784" y="345"/>
+            <point key="canvasLocation" x="784" y="337"/>
         </scene>
         <!--FinalRecognition-->
         <scene sceneID="q63-ZE-iam">

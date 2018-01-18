@@ -17,11 +17,11 @@ class Recognizer {
     static public let shared = Recognizer()
     
     public var bpmRate : Int = 0
-//    public var sportFlag : Bool = false
+    //    public var sportFlag : Bool = false
     public var workHR : Int = 0
-//    public var workSatisFlag : Bool = false
-//    public var sleepHR : Int = 0
-//    public var weatherFlag : Bool = false
+    //    public var workSatisFlag : Bool = false
+    //    public var sleepHR : Int = 0
+    //    public var weatherFlag : Bool = false
     
     public var sadPercentage : Int = 0
     public var happyPercentage : Int = 0
@@ -29,6 +29,7 @@ class Recognizer {
     
     public var healtStore = HKHealthStore()
     public var recognizedMood = "default"
+    public var recognitionTime = "Not avaible"
     
     private init(){ }
     
@@ -50,18 +51,18 @@ class Recognizer {
         
         
         var asleepTime : Double = 0
-    
-//        let calendar = NSCalendar.current
-//        let now = NSDate()
-//        var components = calendar.component(Calendar.Component.year, from: now as Date)
-//        components
-//
-//        let startDate = calendar.dateFromComponents(components)
-//
-//        let endDate = calendar.dateByAddingUnit(.Day, value: 1, toDate: startDate, options: [])
-//
-//
-//        let intervalQuery = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        
+        //        let calendar = NSCalendar.current
+        //        let now = NSDate()
+        //        var components = calendar.component(Calendar.Component.year, from: now as Date)
+        //        components
+        //
+        //        let startDate = calendar.dateFromComponents(components)
+        //
+        //        let endDate = calendar.dateByAddingUnit(.Day, value: 1, toDate: startDate, options: [])
+        //
+        //
+        //        let intervalQuery = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
         
         
         let sleptHours = HKCategoryType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)
@@ -72,20 +73,20 @@ class Recognizer {
             if let results = tmpResults as? [HKCategorySample] {
                 for item in results{
                     asleepTime = (item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
-//                    if let sample = item as? HKCategorySample {
-//                        let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
-//                        print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
-//
-//                    }
-//                    if item.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
-//
-//                        asleepTime = (item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
-//
+                    //                    if let sample = item as? HKCategorySample {
+                    //                        let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
+                    //                        print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
+                    //
+                    //                    }
+                    //                    if item.value == HKCategoryValueSleepAnalysis.asleep.rawValue {
+                    //
+                    //                        asleepTime = (item.startDate.timeIntervalSince(item.endDate) / Double(SECOND_TO_HR))
+                    //
                 }
                 print(abs(asleepTime))
             }
         }
-            
+        
         self.healtStore.execute(sleptHoursSampleQuery)
         
         return abs(asleepTime)
@@ -358,6 +359,13 @@ class Recognizer {
         self.sadPercentage = Int(finalMoodValue[0])
         self.happyPercentage = Int(finalMoodValue[1])
         self.motivatedPercentage = Int(finalMoodValue[2])
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        self.recognitionTime = formatter.string(from: Date())
+        
+        
     }
     
     
@@ -373,3 +381,4 @@ class Recognizer {
     
     
 }
+

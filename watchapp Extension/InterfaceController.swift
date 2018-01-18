@@ -29,46 +29,48 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let recognizedMood = message["moodResponse"] as? String{
-            mood.setImageNamed(recognizedMood+"_icon")
-            mood.setHidden(false)
-            btn.setHidden(false)
-            time.setHidden(false)
+        if let recognizedMood = message["moodResponse"] as? [String]{
+            mood.setImageNamed(recognizedMood[0]+"_icon")
+            time.setText(recognizedMood[1])
+                mood.setHidden(false)
+                btn.setHidden(false)
+                time.setHidden(false)
+            }
         }
-    }
-
-    override func awake(withContext context: Any?) {
-
-        super.awake(withContext: context)
-        mood.setHidden(true)
-        btn.setHidden(true)
-        time.setHidden(true)
-        wcSession = WCSession.default
-        wcSession.delegate = self
-        wcSession.activate()
         
-        // Configure interface objects here.
-    }
-    
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        wcSession.delegate = self
-        print("manda")
-        if wcSession.isReachable{
-            wcSession.sendMessage(["requestMood": "dammi il mood"], replyHandler: nil, errorHandler: nil)
+        override func awake(withContext context: Any?) {
+            
+            super.awake(withContext: context)
+            mood.setHidden(true)
+            btn.setHidden(true)
+            time.setHidden(true)
+            wcSession = WCSession.default
+            wcSession.delegate = self
+            wcSession.activate()
+            
+            // Configure interface objects here.
         }
         
         
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-        mood.setHidden(true)
-        btn.setHidden(true)
-        time.setHidden(true)
-    }
-
+        override func willActivate() {
+            // This method is called when watch view controller is about to be visible to user
+            super.willActivate()
+            wcSession.delegate = self
+            print("manda")
+            if wcSession.isReachable{
+                wcSession.sendMessage(["requestMood": "dammi il mood"], replyHandler: nil, errorHandler: nil)
+            }
+            
+            
+        }
+        
+        override func didDeactivate() {
+            // This method is called when watch view controller is no longer visible
+            super.didDeactivate()
+            mood.setHidden(true)
+            btn.setHidden(true)
+            time.setHidden(true)
+        }
+        
 }
+
