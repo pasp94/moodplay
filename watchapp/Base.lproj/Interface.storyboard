@@ -90,7 +90,7 @@
                                 <imageView width="42" height="42" alignment="right" verticalAlignment="center" image="motivated_icon" id="usp-fY-9n8"/>
                             </items>
                         </group>
-                        <group width="1" alignment="center" id="nvL-G0-1uH">
+                        <group width="1" height="20" alignment="center" id="nvL-G0-1uH">
                             <items>
                                 <label alignment="left" text="Label" id="IBr-xy-fId"/>
                                 <label alignment="right" text="Label" id="EK8-fE-kjo"/>
@@ -104,9 +104,9 @@
                     </items>
                     <connections>
                         <outlet property="mood" destination="afY-Dc-NpR" id="9Dd-Go-lFP"/>
-                        <outlet property="p1" destination="IBr-xy-fId" id="tTg-LH-ENT"/>
-                        <outlet property="p2" destination="EK8-fE-kjo" id="OHg-Uf-r73"/>
-                        <outlet property="p3" destination="aWL-1z-Mbd" id="eHa-TG-Hdi"/>
+                        <outlet property="p1" destination="IBr-xy-fId" id="bKa-Qs-7iU"/>
+                        <outlet property="p2" destination="aWL-1z-Mbd" id="IwU-1i-WIZ"/>
+                        <outlet property="p3" destination="EK8-fE-kjo" id="rBA-Ey-4mW"/>
                     </connections>
                 </controller>
             </objects>
