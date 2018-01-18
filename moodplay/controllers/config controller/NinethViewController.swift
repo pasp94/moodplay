@@ -45,7 +45,7 @@ class NinethViewController: UIViewController {
     }
     
     @IBAction func sendToDb(_ sender: UIButton) {
-        UserDAO.shared.writeObjectToCloud(object: User.shared)
+        UserDAO.shared.updateRecord(id: "user_data", object: User.shared)
         UserDefaults.standard.set(true , forKey: "hasConfigurated")
         UserDefaults.standard.synchronize()
     }
