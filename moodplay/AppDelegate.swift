@@ -28,7 +28,8 @@
                 
                 if let requestMood = message["requestMood"]{
                     
-                    session.sendMessage(["moodResponse":[Recognizer.shared.recognizedMood, Recognizer.shared.recognitionTime]], replyHandler: nil, errorHandler: nil)
+                    _ = UserDAO.shared.readObjectFromCloud(id: "user_data")
+                    session.sendMessage(["moodResponse":[User.shared.recognizedMood, User.shared.recognitionTime] ], replyHandler: nil, errorHandler: nil)
                 }
                 
                 if let ore = message["ore"]
@@ -46,14 +47,15 @@
                     let motivatedMoodPercentage = String("\(Recognizer.shared.motivatedPercentage)%")
                     
                     let moodRecognized = Recognizer.shared.retriverDominantMood()
-                    Recognizer.shared.recognizedMood = moodRecognized.name.lowercased()
+                    User.shared.recognizedMood = moodRecognized.name.lowercased()
+                    UserDAO.shared.updateRecord(id: "user_data", object: User.shared)
                     let r = String(moodRecognized.color.r)
                     let g = String(moodRecognized.color.g)
                     let b = String(moodRecognized.color.b)
                     
                     let message = ["recognizedMood": [sadMoodPercentage, happyMoodPercentage, motivatedMoodPercentage,  moodRecognized.name.uppercased(), r, g, b]]
                     
-                    sleep(2)
+                    sleep(4)
                     
                     session.sendMessage(message, replyHandler: nil, errorHandler: {
                         (error) in
@@ -99,6 +101,7 @@
                 UITabBar.appearance().barTintColor = UIColor.black
                 UITabBar.appearance().tintColor = UIColor.orange
                 
+                _ = UserDAO.shared.readObjectFromCloud(id: "user_data")
                 wcSession = WCSession.default
                 wcSession.delegate = self
                 wcSession.activate()

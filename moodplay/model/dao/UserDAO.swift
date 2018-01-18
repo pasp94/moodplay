@@ -51,6 +51,8 @@ class UserDAO: ProtocolDAO{
         record.setValue(user.weatherFlag, forKey: "weatherFlag")
         record.setValue(user.musicFlag, forKey: "musicFlag")
         record.setValue(user.bpmRate, forKey: "bpmRate")
+        record.setValue(user.recognizedMood, forKey: "recognizedMood")
+        record.setValue(user.recognitionTime, forKey: "recognitionTime")
         
         record.setValue(CKAsset(fileURL: writeImage(image: user.profileImage)), forKey: "profileImage")
     
@@ -93,6 +95,8 @@ class UserDAO: ProtocolDAO{
                 User.shared.weatherFlag = record!["weatherFlag"] as! Bool
                 User.shared.musicFlag = record!["musicFlag"] as! Bool
                 User.shared.bpmRate = record!["bpmRate"] as! Int
+                User.shared.recognizedMood = record!["recognizedMood"] as! String
+                User.shared.recognitionTime = record!["recognitionTime"] as! String
                 
                 let asset = record!["profileImage"] as? CKAsset
                 
@@ -177,6 +181,8 @@ class UserDAO: ProtocolDAO{
             record.setValue(user.weatherFlag, forKey: "weatherFlag")
             record.setValue(user.musicFlag, forKey: "musicFlag")
             record.setValue(user.bpmRate, forKey: "bpmRate")
+            record.setValue(user.recognizedMood, forKey: "recognizedMood")
+            record.setValue(user.recognitionTime, forKey: "recognitionTime")
             
             record.setValue(CKAsset(fileURL: writeImage(image: user.profileImage)), forKey: "profileImage")
             

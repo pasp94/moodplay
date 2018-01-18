@@ -28,8 +28,7 @@ class Recognizer {
     public var motivatedPercentage : Int = 0
     
     public var healtStore = HKHealthStore()
-    public var recognizedMood = "default"
-    public var recognitionTime = "Not avaible"
+
     
     private init(){ }
     
@@ -363,7 +362,8 @@ class Recognizer {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        self.recognitionTime = formatter.string(from: Date())
+        User.shared.recognitionTime = formatter.string(from: Date())
+        
         
         
     }

@@ -26,6 +26,8 @@ class User {
     public var bpmRate : Int = 0
     public var profileImage: UIImage = #imageLiteral(resourceName: "default_profile_image")
     //  public var bpmRateWatch : da Implementare
+    public var recognizedMood: String = "default"
+    public var recognitionTime: String = "Not avaible"
     
     //Inits
     private init () {}
