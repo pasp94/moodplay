@@ -28,7 +28,7 @@ class Recognizer {
     public var motivatedPercentage : Int = 0
     
     public var healtStore = HKHealthStore()
-    
+    public var recognizedMood = "default"
     
     private init(){ }
     

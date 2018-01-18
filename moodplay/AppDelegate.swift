@@ -7,12 +7,66 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+        class AppDelegate: UIResponder, UIApplicationDelegate,WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("session AppDelegate")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("session Inactive")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("session deactivate")
+    }
+    
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
+        if let requestMood = message["requestMood"]{
+            
+            session.sendMessage(["moodResponse":Recognizer.shared.recognizedMood], replyHandler: nil, errorHandler: nil)
+        }
+        
+        if let ore = message["ore"]
+        {
+            print("ore = ",ore)
+            Recognizer.shared.workHR = ore as! Int
+            
+            //Calculate bpm
+            Recognizer.shared.bpmRate = Int(arc4random_uniform(120) + 40)
+            
+            Recognizer.shared.recognizeMood()
+            
+            let sadMoodPercentage = String("\(Recognizer.shared.sadPercentage)%")
+            let happyMoodPercentage = String("\(Recognizer.shared.happyPercentage)%")
+            let motivatedMoodPercentage = String("\(Recognizer.shared.motivatedPercentage)%")
+            
+            let moodRecognized = Recognizer.shared.retriverDominantMood()
+            Recognizer.shared.recognizedMood = moodRecognized.name.lowercased()
+            let r = String(moodRecognized.color.r)
+            let g = String(moodRecognized.color.g)
+            let b = String(moodRecognized.color.b)
+            
+            let message = ["recognizedMood": [sadMoodPercentage, happyMoodPercentage, motivatedMoodPercentage,  moodRecognized.name.uppercased(), r, g, b]]
+            
+            sleep(2)
+            
+            session.sendMessage(message, replyHandler: nil, errorHandler: {
+                (error) in
+                print(error.localizedDescription)
+            })
+        }
+       
+        
+    }
     
     var window: UIWindow?
     
+    var wcSession: WCSession!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -44,6 +98,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         UITabBar.appearance().barTintColor = UIColor.black
         UITabBar.appearance().tintColor = UIColor.orange
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
         
         
         
